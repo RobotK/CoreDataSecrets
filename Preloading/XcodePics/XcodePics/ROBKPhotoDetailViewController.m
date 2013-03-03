@@ -1,22 +1,22 @@
 //
-//  ROBKDetailViewController.m
+//  ROBKPhotoDetailViewController.m
 //  XcodePics
 //
 //  Created by Kris Markel on 3/3/13.
 //  Copyright (c) 2013 RobotK. All rights reserved.
 //
 
-#import "ROBKDetailViewController.h"
+#import "ROBKPhotoDetailViewController.h"
 
 #import "ROBKPhoto.h"
 
-@interface ROBKDetailViewController ()
+@interface ROBKPhotoDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 - (void)configureView;
 @end
 
-@implementation ROBKDetailViewController
+@implementation ROBKPhotoDetailViewController
 
 #pragma mark - Managing the detail item
 

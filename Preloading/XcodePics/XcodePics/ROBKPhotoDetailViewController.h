@@ -1,5 +1,5 @@
 //
-//  ROBKDetailViewController.h
+//  ROBKPhotoDetailViewController.h
 //  XcodePics
 //
 //  Created by Kris Markel on 3/3/13.
@@ -10,7 +10,7 @@
 
 @class ROBKPhoto;
 
-@interface ROBKDetailViewController : UIViewController
+@interface ROBKPhotoDetailViewController : UIViewController
 
 @property (strong, nonatomic) ROBKPhoto *photo;
 

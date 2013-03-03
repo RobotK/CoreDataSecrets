@@ -14,7 +14,7 @@
 
 #import "DCTCoreDataStack.h"
 #import "ROBKAppDelegate.h"
-#import "ROBKDetailViewController.h"
+#import "ROBKPhotoDetailViewController.h"
 
 @interface ROBKPhotoListViewController () <NSFetchedResultsControllerDelegate>
 

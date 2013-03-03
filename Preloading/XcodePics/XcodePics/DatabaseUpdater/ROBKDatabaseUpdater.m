@@ -20,11 +20,13 @@
 @interface ROBKDatabaseUpdater ()
 
 @property (nonatomic, strong, readonly) NSOperationQueue *downloadQueue;
-@property (nonatomic, strong) ISO8601DateFormatter *dateFormatter;
+@property (nonatomic, strong, readonly) ISO8601DateFormatter *dateFormatter;
 
 @end
 
 @implementation ROBKDatabaseUpdater
+
+@synthesize dateFormatter=_dateFormatter;
 
 - (id) init
 {

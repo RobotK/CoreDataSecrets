@@ -1,12 +1,12 @@
 //
-//  ROBKMasterViewController.m
+//  ROBKPhotoListViewController.m
 //  XcodePics
 //
 //  Created by Kris Markel on 3/4/13.
 //  Copyright (c) 2013 RobotK. All rights reserved.
 //
 
-#import "ROBKMasterViewController.h"
+#import "ROBKPhotoListViewController.h"
 
 #import <CoreData/CoreData.h>
 
@@ -16,7 +16,7 @@
 #import "ROBKAppDelegate.h"
 #import "ROBKDetailViewController.h"
 
-@interface ROBKMasterViewController () <NSFetchedResultsControllerDelegate>
+@interface ROBKPhotoListViewController () <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
@@ -24,7 +24,7 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
-@implementation ROBKMasterViewController
+@implementation ROBKPhotoListViewController
 
 @synthesize fetchedResultsController=_fetchedResultsController, managedObjectContext=_managedObjectContext;
 

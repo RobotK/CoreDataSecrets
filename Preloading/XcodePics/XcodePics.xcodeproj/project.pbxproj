@@ -20,7 +20,7 @@
 		B02E079816E3864400C6A12E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B02E079716E3864400C6A12E /* Default@2x.png */; };
 		B02E079A16E3864400C6A12E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B02E079916E3864400C6A12E /* Default-568h@2x.png */; };
 		B02E079D16E3864400C6A12E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02E079B16E3864400C6A12E /* MainStoryboard.storyboard */; };
-		B02E07A016E3864400C6A12E /* ROBKMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E079F16E3864400C6A12E /* ROBKMasterViewController.m */; };
+		B02E07A016E3864400C6A12E /* ROBKPhotoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E079F16E3864400C6A12E /* ROBKPhotoListViewController.m */; };
 		B02E07A316E3864400C6A12E /* ROBKDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E07A216E3864400C6A12E /* ROBKDetailViewController.m */; };
 		B02E07AB16E3870E00C6A12E /* XcodePics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B02E07A916E3870E00C6A12E /* XcodePics.xcdatamodeld */; };
 		B02E07B416E3878900C6A12E /* _DCTCDSManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E07AF16E3878900C6A12E /* _DCTCDSManagedObjectContext.m */; };
@@ -56,8 +56,8 @@
 		B02E079716E3864400C6A12E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B02E079916E3864400C6A12E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B02E079C16E3864400C6A12E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		B02E079E16E3864400C6A12E /* ROBKMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ROBKMasterViewController.h; sourceTree = "<group>"; };
-		B02E079F16E3864400C6A12E /* ROBKMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ROBKMasterViewController.m; sourceTree = "<group>"; };
+		B02E079E16E3864400C6A12E /* ROBKPhotoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ROBKPhotoListViewController.h; sourceTree = "<group>"; };
+		B02E079F16E3864400C6A12E /* ROBKPhotoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ROBKPhotoListViewController.m; sourceTree = "<group>"; };
 		B02E07A116E3864400C6A12E /* ROBKDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ROBKDetailViewController.h; sourceTree = "<group>"; };
 		B02E07A216E3864400C6A12E /* ROBKDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ROBKDetailViewController.m; sourceTree = "<group>"; };
 		B02E07AA16E3870E00C6A12E /* XcodePics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XcodePics.xcdatamodel; sourceTree = "<group>"; };
@@ -156,8 +156,8 @@
 				B02E079216E3864400C6A12E /* ROBKAppDelegate.h */,
 				B02E079316E3864400C6A12E /* ROBKAppDelegate.m */,
 				B02E079B16E3864400C6A12E /* MainStoryboard.storyboard */,
-				B02E079E16E3864400C6A12E /* ROBKMasterViewController.h */,
-				B02E079F16E3864400C6A12E /* ROBKMasterViewController.m */,
+				B02E079E16E3864400C6A12E /* ROBKPhotoListViewController.h */,
+				B02E079F16E3864400C6A12E /* ROBKPhotoListViewController.m */,
 				B02E07A116E3864400C6A12E /* ROBKDetailViewController.h */,
 				B02E07A216E3864400C6A12E /* ROBKDetailViewController.m */,
 				B02E078A16E3864400C6A12E /* Supporting Files */,
@@ -299,7 +299,7 @@
 			files = (
 				B02E079016E3864400C6A12E /* main.m in Sources */,
 				B02E079416E3864400C6A12E /* ROBKAppDelegate.m in Sources */,
-				B02E07A016E3864400C6A12E /* ROBKMasterViewController.m in Sources */,
+				B02E07A016E3864400C6A12E /* ROBKPhotoListViewController.m in Sources */,
 				B02E07A316E3864400C6A12E /* ROBKDetailViewController.m in Sources */,
 				B02E07AB16E3870E00C6A12E /* XcodePics.xcdatamodeld in Sources */,
 				B02E07B416E3878900C6A12E /* _DCTCDSManagedObjectContext.m in Sources */,

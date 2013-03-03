@@ -1,5 +1,5 @@
 //
-//  ROBKMasterViewController.h
+//  ROBKPhotoListViewController.h
 //  XcodePics
 //
 //  Created by Kris Markel on 3/3/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ROBKMasterViewController : UITableViewController
+@interface ROBKPhotoListViewController : UITableViewController
 
 @end

@@ -8,22 +8,11 @@
 
 #import "ROBKAppDelegate.h"
 
-#import "DCTCoreDataStack.h"
-
-@interface ROBKAppDelegate ()
-
-@property (strong, nonatomic) DCTCoreDataStack *coreDataStack;
-
-@end
-
 @implementation ROBKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-
-    self.coreDataStack = [[DCTCoreDataStack alloc] initWithStoreFilename:@"XcodePics"];
-
     return YES;
 }
 							

@@ -55,7 +55,7 @@
 
 - (void)dct_saveWithCompletionHandler:(void(^)(BOOL success, NSError *error))completionHandler {
 	
-	NSError *error = nil;
+	NSError __autoreleasing *error = nil;
 	BOOL success = [self save:&error];
 	
 	if (completionHandler != NULL)

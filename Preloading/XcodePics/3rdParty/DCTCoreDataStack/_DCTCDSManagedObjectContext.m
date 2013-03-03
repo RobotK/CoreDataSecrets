@@ -15,7 +15,7 @@
 
 @implementation _DCTCDSManagedObjectContext
 
-- (BOOL)save:(NSError **)error {
+- (BOOL)save:(__autoreleasing NSError **)error {
 		
 	id object = objc_getAssociatedObject(self, @selector(dct_saveWithCompletionHandler:));
 	

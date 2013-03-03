@@ -27,6 +27,8 @@
 		B02E07C616E399EB00C6A12E /* ESJSONOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E07BE16E399EB00C6A12E /* ESJSONOperation.m */; };
 		B02E07C716E399EB00C6A12E /* ESRunLoopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E07C116E399EB00C6A12E /* ESRunLoopOperation.m */; };
 		B02E07C816E399EB00C6A12E /* NSMutableURLRequest+ESNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E07C316E399EB00C6A12E /* NSMutableURLRequest+ESNetworking.m */; };
+		B02E07CC16E39D7400C6A12E /* ROBKDatabaseUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E07CB16E39D7400C6A12E /* ROBKDatabaseUpdater.m */; };
+		B02E07CE16E39FA800C6A12E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02E07CD16E39FA800C6A12E /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,9 @@
 		B02E07C216E399EB00C6A12E /* NSMutableURLRequest+ESNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+ESNetworking.h"; sourceTree = "<group>"; };
 		B02E07C316E399EB00C6A12E /* NSMutableURLRequest+ESNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+ESNetworking.m"; sourceTree = "<group>"; };
 		B02E07C416E399EB00C6A12E /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		B02E07CA16E39D7400C6A12E /* ROBKDatabaseUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROBKDatabaseUpdater.h; sourceTree = "<group>"; };
+		B02E07CB16E39D7400C6A12E /* ROBKDatabaseUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROBKDatabaseUpdater.m; sourceTree = "<group>"; };
+		B02E07CD16E39FA800C6A12E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B02E07CE16E39FA800C6A12E /* CoreData.framework in Frameworks */,
 				B02E078416E3864400C6A12E /* UIKit.framework in Frameworks */,
 				B02E078616E3864400C6A12E /* Foundation.framework in Frameworks */,
 				B02E078816E3864400C6A12E /* CoreGraphics.framework in Frameworks */,
@@ -103,6 +109,7 @@
 		B02E078216E3864400C6A12E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B02E07CD16E39FA800C6A12E /* CoreData.framework */,
 				B02E078316E3864400C6A12E /* UIKit.framework */,
 				B02E078516E3864400C6A12E /* Foundation.framework */,
 				B02E078716E3864400C6A12E /* CoreGraphics.framework */,
@@ -113,7 +120,7 @@
 		B02E078916E3864400C6A12E /* XcodePics */ = {
 			isa = PBXGroup;
 			children = (
-				B02E07B916E3973400C6A12E /* Parser */,
+				B02E07B916E3973400C6A12E /* DatabaseUpdater */,
 				B02E079216E3864400C6A12E /* ROBKAppDelegate.h */,
 				B02E079316E3864400C6A12E /* ROBKAppDelegate.m */,
 				B02E079B16E3864400C6A12E /* MainStoryboard.storyboard */,
@@ -164,11 +171,13 @@
 			path = DCTCoreDataStack;
 			sourceTree = "<group>";
 		};
-		B02E07B916E3973400C6A12E /* Parser */ = {
+		B02E07B916E3973400C6A12E /* DatabaseUpdater */ = {
 			isa = PBXGroup;
 			children = (
+				B02E07CA16E39D7400C6A12E /* ROBKDatabaseUpdater.h */,
+				B02E07CB16E39D7400C6A12E /* ROBKDatabaseUpdater.m */,
 			);
-			path = Parser;
+			path = DatabaseUpdater;
 			sourceTree = "<group>";
 		};
 		B02E07BA16E399EB00C6A12E /* ESNetworking */ = {
@@ -267,6 +276,7 @@
 				B02E07C616E399EB00C6A12E /* ESJSONOperation.m in Sources */,
 				B02E07C716E399EB00C6A12E /* ESRunLoopOperation.m in Sources */,
 				B02E07C816E399EB00C6A12E /* NSMutableURLRequest+ESNetworking.m in Sources */,
+				B02E07CC16E39D7400C6A12E /* ROBKDatabaseUpdater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +329,16 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
+				WARNING_CFLAGS = (
+					"-Weverything",
+					"-Wno-objc-missing-property-synthesis",
+					"-Wno-direct-ivar-access",
+					"-Wno-readonly-setter-attrs",
+					"-Wno-gnu",
+					"-Wno-custom-atomic-properties",
+				);
 			};
 			name = Debug;
 		};
@@ -343,8 +362,17 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = (
+					"-Weverything",
+					"-Wno-objc-missing-property-synthesis",
+					"-Wno-direct-ivar-access",
+					"-Wno-readonly-setter-attrs",
+					"-Wno-gnu",
+					"-Wno-custom-atomic-properties",
+				);
 			};
 			name = Release;
 		};
@@ -389,6 +417,7 @@
 				B02E07A816E3864400C6A12E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

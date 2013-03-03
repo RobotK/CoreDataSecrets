@@ -213,20 +213,24 @@ NSString *const DCTCoreDataStackExcludeFromBackupStoreOption = @"DCTCoreDataStac
 		int result = getxattr(filePath, attrName, NULL, sizeof(u_int8_t), 0, 0);
 		if (result != -1) removexattr(filePath, attrName, 0);
 	};
-	
+
+#ifndef __clang_analyzer__ // Remove clang analyzer warning if you're building for iOS 6+ or 10.8+
 	void (^addAttribute)() = ^{
 		u_int8_t attrValue = 1;
 		setxattr(filePath, attrName, &attrValue, sizeof(attrValue), 0, 0);
 	};
+#endif
 	
 	BOOL excludeFromBackup = [[self.storeOptions objectForKey:DCTCoreDataStackExcludeFromBackupStoreOption] boolValue];
 	
 	if (&NSURLIsExcludedFromBackupKey == NULL) { // iOS 5.0.x / 10.7.x or earlier
-
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunreachable-code"
 		if (excludeFromBackup)
 			addAttribute();
 		else
 			removeAttribute();
+#pragma clang diagnostic pop
 		
 	} else { // iOS 5.1 / OS X 10.8 and above
 

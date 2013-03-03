@@ -9,18 +9,30 @@
 #import "ROBKAppDelegate.h"
 
 #import "DCTCoreDataStack.h"
+#import "ROBKDatabaseUpdater.h"
 
 @interface ROBKAppDelegate ()
 
-@property (nonatomic, strong) DCTCoreDataStack *coreDataStack;
+@property (nonatomic, strong) ROBKDatabaseUpdater *databaseUpdater;
 
 @end
 
 @implementation ROBKAppDelegate
 
++ (ROBKAppDelegate *)appDelegate
+{
+	return (ROBKAppDelegate *)[[UIApplication sharedApplication] delegate];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	self.coreDataStack = [[DCTCoreDataStack alloc] initWithStoreFilename:@"XcodePics"];
+
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+		self.databaseUpdater = [ROBKDatabaseUpdater new];
+		NSURL *flickrXcodeURL = [NSURL URLWithString:@"https://picasaweb.google.com/data/feed/api/all?kind=photo&q=xcode&alt=json"];
+		[self.databaseUpdater loadJSONFromURL:flickrXcodeURL];
+	});
 
 	return YES;
 }

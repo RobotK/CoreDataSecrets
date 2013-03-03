@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B00CAA1916E3EF8A009FABC0 /* ROBKPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B00CAA1816E3EF8A009FABC0 /* ROBKPhoto.m */; };
+		B00CAA1C16E3F047009FABC0 /* ROBKPhoto+ROBKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B00CAA1B16E3F047009FABC0 /* ROBKPhoto+ROBKAdditions.m */; };
+		B00CAA2116E3F5D2009FABC0 /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B00CAA1F16E3F5D2009FABC0 /* ISO8601DateFormatter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B02E078416E3864400C6A12E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02E078316E3864400C6A12E /* UIKit.framework */; };
 		B02E078616E3864400C6A12E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02E078516E3864400C6A12E /* Foundation.framework */; };
 		B02E078816E3864400C6A12E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02E078716E3864400C6A12E /* CoreGraphics.framework */; };
@@ -32,6 +35,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B00CAA1716E3EF8A009FABC0 /* ROBKPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROBKPhoto.h; sourceTree = "<group>"; };
+		B00CAA1816E3EF8A009FABC0 /* ROBKPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROBKPhoto.m; sourceTree = "<group>"; };
+		B00CAA1A16E3F047009FABC0 /* ROBKPhoto+ROBKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ROBKPhoto+ROBKAdditions.h"; sourceTree = "<group>"; };
+		B00CAA1B16E3F047009FABC0 /* ROBKPhoto+ROBKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ROBKPhoto+ROBKAdditions.m"; sourceTree = "<group>"; };
+		B00CAA1E16E3F5D2009FABC0 /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO8601DateFormatter.h; sourceTree = "<group>"; };
+		B00CAA1F16E3F5D2009FABC0 /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISO8601DateFormatter.m; sourceTree = "<group>"; };
+		B00CAA2016E3F5D2009FABC0 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		B02E078016E3864400C6A12E /* XcodePics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XcodePics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02E078316E3864400C6A12E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B02E078516E3864400C6A12E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -88,6 +98,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B00CAA1616E3EF27009FABC0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B00CAA1716E3EF8A009FABC0 /* ROBKPhoto.h */,
+				B00CAA1816E3EF8A009FABC0 /* ROBKPhoto.m */,
+				B00CAA1A16E3F047009FABC0 /* ROBKPhoto+ROBKAdditions.h */,
+				B00CAA1B16E3F047009FABC0 /* ROBKPhoto+ROBKAdditions.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B00CAA1D16E3F5B8009FABC0 /* iso-8601-date-formatter */ = {
+			isa = PBXGroup;
+			children = (
+				B00CAA1E16E3F5D2009FABC0 /* ISO8601DateFormatter.h */,
+				B00CAA1F16E3F5D2009FABC0 /* ISO8601DateFormatter.m */,
+				B00CAA2016E3F5D2009FABC0 /* LICENSE.txt */,
+			);
+			path = "iso-8601-date-formatter";
+			sourceTree = "<group>";
+		};
 		B02E077716E3864400C6A12E = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +151,7 @@
 		B02E078916E3864400C6A12E /* XcodePics */ = {
 			isa = PBXGroup;
 			children = (
+				B00CAA1616E3EF27009FABC0 /* Models */,
 				B02E07B916E3973400C6A12E /* DatabaseUpdater */,
 				B02E079216E3864400C6A12E /* ROBKAppDelegate.h */,
 				B02E079316E3864400C6A12E /* ROBKAppDelegate.m */,
@@ -151,6 +183,7 @@
 		B02E07AC16E3874700C6A12E /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				B00CAA1D16E3F5B8009FABC0 /* iso-8601-date-formatter */,
 				B02E07BA16E399EB00C6A12E /* ESNetworking */,
 				B02E07AD16E3878900C6A12E /* DCTCoreDataStack */,
 			);
@@ -277,6 +310,9 @@
 				B02E07C716E399EB00C6A12E /* ESRunLoopOperation.m in Sources */,
 				B02E07C816E399EB00C6A12E /* NSMutableURLRequest+ESNetworking.m in Sources */,
 				B02E07CC16E39D7400C6A12E /* ROBKDatabaseUpdater.m in Sources */,
+				B00CAA1916E3EF8A009FABC0 /* ROBKPhoto.m in Sources */,
+				B00CAA1C16E3F047009FABC0 /* ROBKPhoto+ROBKAdditions.m in Sources */,
+				B00CAA2116E3F5D2009FABC0 /* ISO8601DateFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +374,7 @@
 					"-Wno-readonly-setter-attrs",
 					"-Wno-gnu",
 					"-Wno-custom-atomic-properties",
+					"-Wno-objc-interface-ivars",
 				);
 			};
 			name = Debug;
@@ -372,6 +409,7 @@
 					"-Wno-readonly-setter-attrs",
 					"-Wno-gnu",
 					"-Wno-custom-atomic-properties",
+					"-Wno-objc-interface-ivars",
 				);
 			};
 			name = Release;

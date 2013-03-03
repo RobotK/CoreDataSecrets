@@ -124,6 +124,9 @@ extern NSString *const DCTCoreDataStackExcludeFromBackupStoreOption;
 /** The URL of the model being used. This can be nil if the model is merged from all the models in the app's main bundle. */
 @property (nonatomic, copy, readonly) NSURL *modelURL;
 
+/** The persistent store coordinator to be used for creating managed object contexts outside of the one provided by this class. */
+@property (nonatomic, strong, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
 /// @name Handling Events
 
 /** An error may happen on loading the persistent store, due to an incompatible model for example.

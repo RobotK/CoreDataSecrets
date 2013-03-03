@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class ROBKPhoto;
+
 @interface ROBKDetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) ROBKPhoto *photo;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end

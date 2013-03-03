@@ -8,7 +8,11 @@
 
 #import "ROBKDetailViewController.h"
 
+#import "ROBKPhoto.h"
+
 @interface ROBKDetailViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
 - (void)configureView;
 @end
 
@@ -18,8 +22,8 @@
 
 - (void)setDetailItem:(id)newDetailItem
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+    if (_photo != newDetailItem) {
+        _photo = newDetailItem;
         
         // Update the view.
         [self configureView];
@@ -30,8 +34,8 @@
 {
     // Update the user interface for the detail item.
 
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+    if (self.photo) {
+		 self.detailDescriptionLabel.text = self.photo.text;
     }
 }
 

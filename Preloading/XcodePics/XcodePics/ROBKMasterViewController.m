@@ -69,8 +69,8 @@
 {
 	if ([[segue identifier] isEqualToString:@"showDetail"]) {
 		NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-		NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-		[[segue destinationViewController] setDetailItem:object];
+		ROBKPhoto *photo = (ROBKPhoto *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
+		[[segue destinationViewController] setPhoto:photo];
 	}
 }
 

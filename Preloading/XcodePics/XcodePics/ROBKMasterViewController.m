@@ -177,6 +177,7 @@
 {
 	ROBKPhoto *photo = (ROBKPhoto *)[self.fetchedResultsController objectAtIndexPath:indexPath];
 	cell.textLabel.text = photo.title;
+	cell.detailTextLabel.text = photo.author;
 }
 
 @end

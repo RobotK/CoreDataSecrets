@@ -1,0 +1,3 @@
+[submodule "Preloading/XcodePics/3rdParty/ESNetworking"]
+	path = Preloading/XcodePics/3rdParty/ESNetworking
+	url = git://github.com/rustle/ESNetworking.git

@@ -8,36 +8,50 @@
 
 #import "ROBKPhotoDetailViewController.h"
 
+#import "ESHTTPOperation.h"
 #import "ROBKPhoto.h"
 
 @interface ROBKPhotoDetailViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (nonatomic, strong, readonly) NSOperationQueue *downloadQueue;
 
 - (void)configureView;
+- (void)downloadPhoto;
+
 @end
 
 @implementation ROBKPhotoDetailViewController
 
-#pragma mark - Managing the detail item
+@synthesize downloadQueue=_downloadQueue;
 
-- (void)setDetailItem:(id)newDetailItem
+#pragma mark - Properties
+
+- (void)setPhoto:(ROBKPhoto *)newPhoto
 {
-    if (_photo != newDetailItem) {
-        _photo = newDetailItem;
-        
-        // Update the view.
-        [self configureView];
-    }
+	if (_photo != newPhoto) {
+		_photo = newPhoto;
+
+		[self downloadPhoto];
+
+		// Update the view.
+		[self configureView];
+	}
 }
 
-- (void)configureView
+- (NSOperationQueue *)downloadQueue
 {
-    // Update the user interface for the detail item.
+	if (_downloadQueue) {
+		return _downloadQueue;
+	}
 
-    if (self.photo) {
-		 self.detailDescriptionLabel.text = self.photo.text;
-    }
+	_downloadQueue = [NSOperationQueue new];
+	return _downloadQueue;
 }
+
+#pragma mark - View Lifecycle
 
 - (void)viewDidLoad
 {
@@ -46,10 +60,71 @@
     [self configureView];
 }
 
+- (void)didMoveToParentViewController:(UIViewController *)parent
+{
+	[super didMoveToParentViewController:parent];
+	if (!parent) {
+		// We're being dismissed. Cancel any in progress downloads.
+		[self.downloadQueue cancelAllOperations];
+	}
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Helpers
+
+- (void)configureView
+{
+	// Update the user interface for the detail item.
+
+	if (self.photo) {
+		self.detailDescriptionLabel.text = self.photo.text;
+	}
+}
+
+- (void)downloadPhoto
+{
+	[self.downloadQueue cancelAllOperations];
+
+	NSURL *downloadURL = [NSURL URLWithString:self.photo.url];
+	NSLog(@"downloadURL: %@", downloadURL);
+	NSURLRequest *downloadRequest = [NSURLRequest requestWithURL:downloadURL];
+	ESHTTPOperation *downloadOperation = [ESHTTPOperation newHTTPOperationWithRequest:downloadRequest work:^id<NSObject>(ESHTTPOperation *op, NSError *__autoreleasing *error) {
+
+		if (op.error)
+		{
+			if (error)
+				*error = op.error;
+			return nil;
+		}
+		NSData *data = op.responseBody;
+		if ([data length] == 0)
+		{
+			return nil;
+		}
+		UIImage *image = [UIImage imageWithData:data];
+		return image;
+
+	} completion:^(ESHTTPOperation *op) {
+
+		NSError *error = op.error;
+		if (error)
+		{
+			// TODO: Handle error.
+			NSLog(@"Error downloading an image. %@", error);
+		}
+		else
+		{
+			self.imageView.image = op.processedResponse;
+		}
+
+	}];
+
+	[self.downloadQueue addOperation:downloadOperation];
 }
 
 @end

@@ -7,5 +7,8 @@
       <FileRef
          location = "group:XcodePics/XcodePics.xcodeproj">
       </FileRef>
+      <FileRef
+         location = "group:XcodePicsCoreDataLibrary/XcodePicsCoreDataLibrary.xcodeproj">
+      </FileRef>
    </Group>
 </Workspace>

@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B0120C8316E4D0D000E9E863 /* XcodePics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B072EDE116E49D9F0090BAF6 /* XcodePics.xcdatamodeld */; };
+		B0120C8A16E4D18300E9E863 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0120C8916E4D18300E9E863 /* CoreFoundation.framework */; };
+		B0120C9016E4D18300E9E863 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0120C8E16E4D18300E9E863 /* InfoPlist.strings */; };
+		B0120C9516E4D18C00E9E863 /* XcodePics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B072EDE116E49D9F0090BAF6 /* XcodePics.xcdatamodeld */; };
+		B0120C9C16E4E03D00E9E863 /* DCTCoreDataStack+ROBKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B0120C9B16E4E03D00E9E863 /* DCTCoreDataStack+ROBKAdditions.m */; };
+		B0120C9D16E4E0B500E9E863 /* DCTCoreDataStack+ROBKAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B0120C9A16E4E03D00E9E863 /* DCTCoreDataStack+ROBKAdditions.h */; };
+		B072EDB916E497090090BAF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B072EDB816E497090090BAF6 /* Foundation.framework */; };
+		B072EDE916E49E0C0090BAF6 /* ROBKPhoto+ROBKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDE616E49E0C0090BAF6 /* ROBKPhoto+ROBKAdditions.m */; };
+		B072EDEA16E49E0C0090BAF6 /* ROBKPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDE816E49E0C0090BAF6 /* ROBKPhoto.m */; };
+		B072EDED16E49E600090BAF6 /* DCTCoreDataStack.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B072EDD816E4983C0090BAF6 /* DCTCoreDataStack.h */; };
+		B072EDEE16E49EEE0090BAF6 /* ESHTTPOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B072EDCB16E4983C0090BAF6 /* ESHTTPOperation.h */; };
+		B072EDEF16E49FEC0090BAF6 /* ESRunLoopOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B072EDD016E4983C0090BAF6 /* ESRunLoopOperation.h */; };
+		B072EDF016E4A0030090BAF6 /* NSManagedObjectContext+DCTCoreDataStack.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B072EDDA16E4983C0090BAF6 /* NSManagedObjectContext+DCTCoreDataStack.h */; };
+		B072EDF116E4A00E0090BAF6 /* ESNetworkError.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B072EDCF16E4983C0090BAF6 /* ESNetworkError.h */; };
+		B072EDF216E4A0150090BAF6 /* NSMutableURLRequest+ESNetworking.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B072EDD216E4983C0090BAF6 /* NSMutableURLRequest+ESNetworking.h */; };
+		B072EDF316E4A03A0090BAF6 /* ROBKPhoto.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B072EDE716E49E0C0090BAF6 /* ROBKPhoto.h */; };
+		B072EDF416E4A0590090BAF6 /* ROBKPhoto+ROBKAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B072EDE516E49E0C0090BAF6 /* ROBKPhoto+ROBKAdditions.h */; };
+		B094C0AF16E4A68F008A2334 /* ROBKDatabaseUpdater.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B072EDDE16E498B00090BAF6 /* ROBKDatabaseUpdater.h */; };
+		B094C0B716E4C847008A2334 /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDC816E4983C0090BAF6 /* ISO8601DateFormatter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B094C0B816E4C84C008A2334 /* ESHTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDCC16E4983C0090BAF6 /* ESHTTPOperation.m */; };
+		B094C0B916E4C850008A2334 /* ESJSONOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDCE16E4983C0090BAF6 /* ESJSONOperation.m */; };
+		B094C0BA16E4C854008A2334 /* ESRunLoopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDD116E4983C0090BAF6 /* ESRunLoopOperation.m */; };
+		B094C0BB16E4C857008A2334 /* NSMutableURLRequest+ESNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDD316E4983C0090BAF6 /* NSMutableURLRequest+ESNetworking.m */; };
+		B094C0BC16E4C85F008A2334 /* _DCTCDSManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDD716E4983C0090BAF6 /* _DCTCDSManagedObjectContext.m */; };
+		B094C0BD16E4C86A008A2334 /* DCTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDD916E4983C0090BAF6 /* DCTCoreDataStack.m */; };
+		B094C0BE16E4C86E008A2334 /* NSManagedObjectContext+DCTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDDB16E4983C0090BAF6 /* NSManagedObjectContext+DCTCoreDataStack.m */; };
+		B094C0BF16E4C87B008A2334 /* ROBKDatabaseUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDDF16E498B00090BAF6 /* ROBKDatabaseUpdater.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B072EDB316E497090090BAF6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				B072EDED16E49E600090BAF6 /* DCTCoreDataStack.h in CopyFiles */,
+				B072EDEE16E49EEE0090BAF6 /* ESHTTPOperation.h in CopyFiles */,
+				B072EDEF16E49FEC0090BAF6 /* ESRunLoopOperation.h in CopyFiles */,
+				B072EDF016E4A0030090BAF6 /* NSManagedObjectContext+DCTCoreDataStack.h in CopyFiles */,
+				B072EDF116E4A00E0090BAF6 /* ESNetworkError.h in CopyFiles */,
+				B072EDF216E4A0150090BAF6 /* NSMutableURLRequest+ESNetworking.h in CopyFiles */,
+				B072EDF316E4A03A0090BAF6 /* ROBKPhoto.h in CopyFiles */,
+				B072EDF416E4A0590090BAF6 /* ROBKPhoto+ROBKAdditions.h in CopyFiles */,
+				B094C0AF16E4A68F008A2334 /* ROBKDatabaseUpdater.h in CopyFiles */,
+				B0120C9D16E4E0B500E9E863 /* DCTCoreDataStack+ROBKAdditions.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B0120C8816E4D18300E9E863 /* XcodePicsModels.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XcodePicsModels.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0120C8916E4D18300E9E863 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		B0120C8D16E4D18300E9E863 /* XcodePicsModels-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XcodePicsModels-Info.plist"; sourceTree = "<group>"; };
+		B0120C8F16E4D18300E9E863 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B0120C9116E4D18300E9E863 /* XcodePicsModels-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XcodePicsModels-Prefix.pch"; sourceTree = "<group>"; };
+		B0120C9A16E4E03D00E9E863 /* DCTCoreDataStack+ROBKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DCTCoreDataStack+ROBKAdditions.h"; sourceTree = "<group>"; };
+		B0120C9B16E4E03D00E9E863 /* DCTCoreDataStack+ROBKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DCTCoreDataStack+ROBKAdditions.m"; sourceTree = "<group>"; };
+		B072EDB516E497090090BAF6 /* libXcodePicsCoreDataLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXcodePicsCoreDataLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B072EDB816E497090090BAF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B072EDBC16E497090090BAF6 /* XcodePicsCoreDataLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XcodePicsCoreDataLibrary-Prefix.pch"; sourceTree = "<group>"; };
+		B072EDC716E4983C0090BAF6 /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO8601DateFormatter.h; sourceTree = "<group>"; };
+		B072EDC816E4983C0090BAF6 /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISO8601DateFormatter.m; sourceTree = "<group>"; };
+		B072EDC916E4983C0090BAF6 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		B072EDCB16E4983C0090BAF6 /* ESHTTPOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESHTTPOperation.h; sourceTree = "<group>"; };
+		B072EDCC16E4983C0090BAF6 /* ESHTTPOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESHTTPOperation.m; sourceTree = "<group>"; };
+		B072EDCD16E4983C0090BAF6 /* ESJSONOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESJSONOperation.h; sourceTree = "<group>"; };
+		B072EDCE16E4983C0090BAF6 /* ESJSONOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESJSONOperation.m; sourceTree = "<group>"; };
+		B072EDCF16E4983C0090BAF6 /* ESNetworkError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESNetworkError.h; sourceTree = "<group>"; };
+		B072EDD016E4983C0090BAF6 /* ESRunLoopOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRunLoopOperation.h; sourceTree = "<group>"; };
+		B072EDD116E4983C0090BAF6 /* ESRunLoopOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRunLoopOperation.m; sourceTree = "<group>"; };
+		B072EDD216E4983C0090BAF6 /* NSMutableURLRequest+ESNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+ESNetworking.h"; sourceTree = "<group>"; };
+		B072EDD316E4983C0090BAF6 /* NSMutableURLRequest+ESNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+ESNetworking.m"; sourceTree = "<group>"; };
+		B072EDD416E4983C0090BAF6 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		B072EDD616E4983C0090BAF6 /* _DCTCDSManagedObjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DCTCDSManagedObjectContext.h; sourceTree = "<group>"; };
+		B072EDD716E4983C0090BAF6 /* _DCTCDSManagedObjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DCTCDSManagedObjectContext.m; sourceTree = "<group>"; };
+		B072EDD816E4983C0090BAF6 /* DCTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTCoreDataStack.h; sourceTree = "<group>"; };
+		B072EDD916E4983C0090BAF6 /* DCTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTCoreDataStack.m; sourceTree = "<group>"; };
+		B072EDDA16E4983C0090BAF6 /* NSManagedObjectContext+DCTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+DCTCoreDataStack.h"; sourceTree = "<group>"; };
+		B072EDDB16E4983C0090BAF6 /* NSManagedObjectContext+DCTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+DCTCoreDataStack.m"; sourceTree = "<group>"; };
+		B072EDDC16E4983C0090BAF6 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		B072EDDE16E498B00090BAF6 /* ROBKDatabaseUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROBKDatabaseUpdater.h; sourceTree = "<group>"; };
+		B072EDDF16E498B00090BAF6 /* ROBKDatabaseUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROBKDatabaseUpdater.m; sourceTree = "<group>"; };
+		B072EDE216E49D9F0090BAF6 /* XcodePics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XcodePics.xcdatamodel; sourceTree = "<group>"; };
+		B072EDE516E49E0C0090BAF6 /* ROBKPhoto+ROBKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ROBKPhoto+ROBKAdditions.h"; sourceTree = "<group>"; };
+		B072EDE616E49E0C0090BAF6 /* ROBKPhoto+ROBKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ROBKPhoto+ROBKAdditions.m"; sourceTree = "<group>"; };
+		B072EDE716E49E0C0090BAF6 /* ROBKPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROBKPhoto.h; sourceTree = "<group>"; };
+		B072EDE816E49E0C0090BAF6 /* ROBKPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROBKPhoto.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B0120C8516E4D18300E9E863 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0120C8A16E4D18300E9E863 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B072EDB216E497090090BAF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B072EDB916E497090090BAF6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B0120C8B16E4D18300E9E863 /* XcodePicsModels */ = {
+			isa = PBXGroup;
+			children = (
+				B0120C8C16E4D18300E9E863 /* Supporting Files */,
+			);
+			path = XcodePicsModels;
+			sourceTree = "<group>";
+		};
+		B0120C8C16E4D18300E9E863 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B0120C8D16E4D18300E9E863 /* XcodePicsModels-Info.plist */,
+				B0120C8E16E4D18300E9E863 /* InfoPlist.strings */,
+				B0120C9116E4D18300E9E863 /* XcodePicsModels-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B0120C9916E4DFF200E9E863 /* DCTCoreDataStackExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				B0120C9A16E4E03D00E9E863 /* DCTCoreDataStack+ROBKAdditions.h */,
+				B0120C9B16E4E03D00E9E863 /* DCTCoreDataStack+ROBKAdditions.m */,
+			);
+			path = DCTCoreDataStackExtensions;
+			sourceTree = "<group>";
+		};
+		B072EDAC16E497090090BAF6 = {
+			isa = PBXGroup;
+			children = (
+				B072EDC616E498230090BAF6 /* 3rdParty */,
+				B072EDBA16E497090090BAF6 /* XcodePicsCoreDataLibrary */,
+				B0120C8B16E4D18300E9E863 /* XcodePicsModels */,
+				B072EDB716E497090090BAF6 /* Frameworks */,
+				B072EDB616E497090090BAF6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B072EDB616E497090090BAF6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B072EDB516E497090090BAF6 /* libXcodePicsCoreDataLibrary.a */,
+				B0120C8816E4D18300E9E863 /* XcodePicsModels.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B072EDB716E497090090BAF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B072EDB816E497090090BAF6 /* Foundation.framework */,
+				B0120C8916E4D18300E9E863 /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B072EDBA16E497090090BAF6 /* XcodePicsCoreDataLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				B0120C9916E4DFF200E9E863 /* DCTCoreDataStackExtensions */,
+				B072EDE416E49E0C0090BAF6 /* Models */,
+				B072EDE016E498B00090BAF6 /* DatabaseUpdater */,
+				B072EDBB16E497090090BAF6 /* Supporting Files */,
+			);
+			path = XcodePicsCoreDataLibrary;
+			sourceTree = "<group>";
+		};
+		B072EDBB16E497090090BAF6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B072EDE116E49D9F0090BAF6 /* XcodePics.xcdatamodeld */,
+				B072EDBC16E497090090BAF6 /* XcodePicsCoreDataLibrary-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B072EDC616E498230090BAF6 /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				B072EDCA16E4983C0090BAF6 /* iso-8601-date-formatter */,
+				B072EDD516E4983C0090BAF6 /* ESNetworking */,
+				B072EDDD16E4983C0090BAF6 /* DCTCoreDataStack */,
+			);
+			path = 3rdParty;
+			sourceTree = "<group>";
+		};
+		B072EDCA16E4983C0090BAF6 /* iso-8601-date-formatter */ = {
+			isa = PBXGroup;
+			children = (
+				B072EDC716E4983C0090BAF6 /* ISO8601DateFormatter.h */,
+				B072EDC816E4983C0090BAF6 /* ISO8601DateFormatter.m */,
+				B072EDC916E4983C0090BAF6 /* LICENSE.txt */,
+			);
+			path = "iso-8601-date-formatter";
+			sourceTree = "<group>";
+		};
+		B072EDD516E4983C0090BAF6 /* ESNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				B072EDCB16E4983C0090BAF6 /* ESHTTPOperation.h */,
+				B072EDCC16E4983C0090BAF6 /* ESHTTPOperation.m */,
+				B072EDCD16E4983C0090BAF6 /* ESJSONOperation.h */,
+				B072EDCE16E4983C0090BAF6 /* ESJSONOperation.m */,
+				B072EDCF16E4983C0090BAF6 /* ESNetworkError.h */,
+				B072EDD016E4983C0090BAF6 /* ESRunLoopOperation.h */,
+				B072EDD116E4983C0090BAF6 /* ESRunLoopOperation.m */,
+				B072EDD216E4983C0090BAF6 /* NSMutableURLRequest+ESNetworking.h */,
+				B072EDD316E4983C0090BAF6 /* NSMutableURLRequest+ESNetworking.m */,
+				B072EDD416E4983C0090BAF6 /* README */,
+			);
+			path = ESNetworking;
+			sourceTree = "<group>";
+		};
+		B072EDDD16E4983C0090BAF6 /* DCTCoreDataStack */ = {
+			isa = PBXGroup;
+			children = (
+				B072EDD616E4983C0090BAF6 /* _DCTCDSManagedObjectContext.h */,
+				B072EDD716E4983C0090BAF6 /* _DCTCDSManagedObjectContext.m */,
+				B072EDD816E4983C0090BAF6 /* DCTCoreDataStack.h */,
+				B072EDD916E4983C0090BAF6 /* DCTCoreDataStack.m */,
+				B072EDDA16E4983C0090BAF6 /* NSManagedObjectContext+DCTCoreDataStack.h */,
+				B072EDDB16E4983C0090BAF6 /* NSManagedObjectContext+DCTCoreDataStack.m */,
+				B072EDDC16E4983C0090BAF6 /* license.txt */,
+			);
+			path = DCTCoreDataStack;
+			sourceTree = "<group>";
+		};
+		B072EDE016E498B00090BAF6 /* DatabaseUpdater */ = {
+			isa = PBXGroup;
+			children = (
+				B072EDDE16E498B00090BAF6 /* ROBKDatabaseUpdater.h */,
+				B072EDDF16E498B00090BAF6 /* ROBKDatabaseUpdater.m */,
+			);
+			path = DatabaseUpdater;
+			sourceTree = "<group>";
+		};
+		B072EDE416E49E0C0090BAF6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B072EDE516E49E0C0090BAF6 /* ROBKPhoto+ROBKAdditions.h */,
+				B072EDE616E49E0C0090BAF6 /* ROBKPhoto+ROBKAdditions.m */,
+				B072EDE716E49E0C0090BAF6 /* ROBKPhoto.h */,
+				B072EDE816E49E0C0090BAF6 /* ROBKPhoto.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B0120C8716E4D18300E9E863 /* XcodePicsModels */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0120C9216E4D18300E9E863 /* Build configuration list for PBXNativeTarget "XcodePicsModels" */;
+			buildPhases = (
+				B0120C8416E4D18300E9E863 /* Sources */,
+				B0120C8516E4D18300E9E863 /* Frameworks */,
+				B0120C8616E4D18300E9E863 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XcodePicsModels;
+			productName = XcodePicsModels;
+			productReference = B0120C8816E4D18300E9E863 /* XcodePicsModels.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		B072EDB416E497090090BAF6 /* XcodePicsCoreDataLibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B072EDC316E497090090BAF6 /* Build configuration list for PBXNativeTarget "XcodePicsCoreDataLibrary" */;
+			buildPhases = (
+				B072EDB116E497090090BAF6 /* Sources */,
+				B072EDB216E497090090BAF6 /* Frameworks */,
+				B072EDB316E497090090BAF6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XcodePicsCoreDataLibrary;
+			productName = XcodePicsCoreDataLibrary;
+			productReference = B072EDB516E497090090BAF6 /* libXcodePicsCoreDataLibrary.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B072EDAD16E497090090BAF6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = RobotK;
+			};
+			buildConfigurationList = B072EDB016E497090090BAF6 /* Build configuration list for PBXProject "XcodePicsCoreDataLibrary" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B072EDAC16E497090090BAF6;
+			productRefGroup = B072EDB616E497090090BAF6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B072EDB416E497090090BAF6 /* XcodePicsCoreDataLibrary */,
+				B0120C8716E4D18300E9E863 /* XcodePicsModels */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B0120C8616E4D18300E9E863 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0120C9016E4D18300E9E863 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B0120C8416E4D18300E9E863 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0120C9516E4D18C00E9E863 /* XcodePics.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B072EDB116E497090090BAF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B072EDE916E49E0C0090BAF6 /* ROBKPhoto+ROBKAdditions.m in Sources */,
+				B072EDEA16E49E0C0090BAF6 /* ROBKPhoto.m in Sources */,
+				B094C0B716E4C847008A2334 /* ISO8601DateFormatter.m in Sources */,
+				B094C0B816E4C84C008A2334 /* ESHTTPOperation.m in Sources */,
+				B094C0B916E4C850008A2334 /* ESJSONOperation.m in Sources */,
+				B094C0BA16E4C854008A2334 /* ESRunLoopOperation.m in Sources */,
+				B094C0BB16E4C857008A2334 /* NSMutableURLRequest+ESNetworking.m in Sources */,
+				B094C0BC16E4C85F008A2334 /* _DCTCDSManagedObjectContext.m in Sources */,
+				B094C0BD16E4C86A008A2334 /* DCTCoreDataStack.m in Sources */,
+				B094C0BE16E4C86E008A2334 /* NSManagedObjectContext+DCTCoreDataStack.m in Sources */,
+				B094C0BF16E4C87B008A2334 /* ROBKDatabaseUpdater.m in Sources */,
+				B0120C8316E4D0D000E9E863 /* XcodePics.xcdatamodeld in Sources */,
+				B0120C9C16E4E03D00E9E863 /* DCTCoreDataStack+ROBKAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B0120C8E16E4D18300E9E863 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0120C8F16E4D18300E9E863 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B0120C9316E4D18300E9E863 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XcodePicsModels/XcodePicsModels-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "XcodePicsModels/XcodePicsModels-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		B0120C9416E4D18300E9E863 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XcodePicsModels/XcodePicsModels-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "XcodePicsModels/XcodePicsModels-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		B072EDC116E497090090BAF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B072EDC216E497090090BAF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B072EDC416E497090090BAF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/XcodePicsCoreDataLibrary.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XcodePicsCoreDataLibrary/XcodePicsCoreDataLibrary-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B072EDC516E497090090BAF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/XcodePicsCoreDataLibrary.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XcodePicsCoreDataLibrary/XcodePicsCoreDataLibrary-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B0120C9216E4D18300E9E863 /* Build configuration list for PBXNativeTarget "XcodePicsModels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0120C9316E4D18300E9E863 /* Debug */,
+				B0120C9416E4D18300E9E863 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B072EDB016E497090090BAF6 /* Build configuration list for PBXProject "XcodePicsCoreDataLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B072EDC116E497090090BAF6 /* Debug */,
+				B072EDC216E497090090BAF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B072EDC316E497090090BAF6 /* Build configuration list for PBXNativeTarget "XcodePicsCoreDataLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B072EDC416E497090090BAF6 /* Debug */,
+				B072EDC516E497090090BAF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B072EDE116E49D9F0090BAF6 /* XcodePics.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B072EDE216E49D9F0090BAF6 /* XcodePics.xcdatamodel */,
+			);
+			currentVersion = B072EDE216E49D9F0090BAF6 /* XcodePics.xcdatamodel */;
+			path = XcodePics.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B072EDAD16E497090090BAF6 /* Project object */;
+}

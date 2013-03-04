@@ -8,8 +8,8 @@
 
 #import "ROBKAppDelegate.h"
 
-#import "DCTCoreDataStack.h"
-#import "ROBKDatabaseUpdater.h"
+#import "XcodePicsCoreDataLibrary/DCTCoreDataStack+ROBKAdditions.h"
+#import "XcodePicsCoreDataLibrary/ROBKDatabaseUpdater.h"
 
 @interface ROBKAppDelegate ()
 
@@ -24,9 +24,17 @@
 	return (ROBKAppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
+- (void) dealloc
+{
+	// Technically not needed, but included for completeness.
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:NSManagedObjectContextDidSaveNotification object:nil];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	self.coreDataStack = [[DCTCoreDataStack alloc] initWithStoreFilename:@"XcodePics"];
+	self.coreDataStack = [DCTCoreDataStack sharedCoreDataStack];
+
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSaveNotificationHandler:) name:NSManagedObjectContextDidSaveNotification object:nil];
 
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 		self.databaseUpdater = [ROBKDatabaseUpdater new];
@@ -62,6 +70,23 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Notification handlers
+
+- (void)didSaveNotificationHandler:(NSNotification *)notification
+{
+	NSLog(@"Saved!");
+
+	NSManagedObjectContext *moc = (NSManagedObjectContext *)notification.object;
+
+	if (moc.persistentStoreCoordinator == self.coreDataStack.managedObjectContext.persistentStoreCoordinator) {
+
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self.coreDataStack.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
+		});
+
+	}
 }
 
 @end

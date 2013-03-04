@@ -8,8 +8,8 @@
 
 #import "ROBKPhotoDetailViewController.h"
 
-#import "ESHTTPOperation.h"
-#import "ROBKPhoto.h"
+#import "XcodePicsCoreDataLibrary/ESHTTPOperation.h"
+#import "XcodePicsCoreDataLibrary/ROBKPhoto.h"
 
 @interface ROBKPhotoDetailViewController ()
 

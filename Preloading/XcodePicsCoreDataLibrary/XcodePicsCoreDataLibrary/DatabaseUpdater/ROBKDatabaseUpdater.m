@@ -10,15 +10,15 @@
 
 #import <CoreData/CoreData.h>
 
+#import "DCTCoreDataStack+ROBKAdditions.h"
 #import "ROBKPhoto+ROBKAdditions.h"
 
-#import "DCTCoreDataStack.h"
 #import "ESJSONOperation.h"
 #import "ISO8601DateFormatter.h"
-#import "ROBKAppDelegate.h"
 
 @interface ROBKDatabaseUpdater ()
 
+@property (nonatomic, strong, readonly) DCTCoreDataStack *coreDataStack;
 @property (nonatomic, strong, readonly) NSOperationQueue *downloadQueue;
 @property (nonatomic, strong, readonly) ISO8601DateFormatter *dateFormatter;
 
@@ -26,7 +26,7 @@
 
 @implementation ROBKDatabaseUpdater
 
-@synthesize dateFormatter=_dateFormatter;
+@synthesize dateFormatter=_dateFormatter, coreDataStack=_coreDataStack;
 
 - (id) init
 {
@@ -50,9 +50,9 @@
 		NSAssert([JSON isKindOfClass:[NSDictionary class]], @"Expecting the root object to be a dictionary.");
 
 		NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-		moc.persistentStoreCoordinator = [ROBKAppDelegate appDelegate].coreDataStack.persistentStoreCoordinator;
+		moc.persistentStoreCoordinator = self.coreDataStack.persistentStoreCoordinator;
 
-		[moc performBlockAndWait:^{
+		[moc performBlock:^{
 
 			NSDictionary *feed = JSON[@"feed"];
 
@@ -130,6 +130,15 @@
 	}
 
 	return _dateFormatter;
+}
+
+- (DCTCoreDataStack *) coreDataStack
+{
+	if (!_coreDataStack) {
+		_coreDataStack = [DCTCoreDataStack sharedCoreDataStack];
+	}
+
+	return _coreDataStack;
 }
 
 @end

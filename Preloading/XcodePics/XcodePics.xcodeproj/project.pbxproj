@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B00CAA1916E3EF8A009FABC0 /* ROBKPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B00CAA1816E3EF8A009FABC0 /* ROBKPhoto.m */; };
-		B00CAA1C16E3F047009FABC0 /* ROBKPhoto+ROBKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B00CAA1B16E3F047009FABC0 /* ROBKPhoto+ROBKAdditions.m */; };
-		B00CAA2116E3F5D2009FABC0 /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B00CAA1F16E3F5D2009FABC0 /* ISO8601DateFormatter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B0120C9816E4D56100E9E863 /* XcodePicsModels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B0120C9716E4D56100E9E863 /* XcodePicsModels.bundle */; };
 		B02E078416E3864400C6A12E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02E078316E3864400C6A12E /* UIKit.framework */; };
 		B02E078616E3864400C6A12E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02E078516E3864400C6A12E /* Foundation.framework */; };
 		B02E078816E3864400C6A12E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02E078716E3864400C6A12E /* CoreGraphics.framework */; };
@@ -22,26 +20,12 @@
 		B02E079D16E3864400C6A12E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02E079B16E3864400C6A12E /* MainStoryboard.storyboard */; };
 		B02E07A016E3864400C6A12E /* ROBKPhotoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E079F16E3864400C6A12E /* ROBKPhotoListViewController.m */; };
 		B02E07A316E3864400C6A12E /* ROBKPhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E07A216E3864400C6A12E /* ROBKPhotoDetailViewController.m */; };
-		B02E07AB16E3870E00C6A12E /* XcodePics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B02E07A916E3870E00C6A12E /* XcodePics.xcdatamodeld */; };
-		B02E07B416E3878900C6A12E /* _DCTCDSManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E07AF16E3878900C6A12E /* _DCTCDSManagedObjectContext.m */; };
-		B02E07B516E3878900C6A12E /* DCTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E07B116E3878900C6A12E /* DCTCoreDataStack.m */; };
-		B02E07B616E3878900C6A12E /* NSManagedObjectContext+DCTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E07B316E3878900C6A12E /* NSManagedObjectContext+DCTCoreDataStack.m */; };
-		B02E07C516E399EB00C6A12E /* ESHTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E07BC16E399EB00C6A12E /* ESHTTPOperation.m */; };
-		B02E07C616E399EB00C6A12E /* ESJSONOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E07BE16E399EB00C6A12E /* ESJSONOperation.m */; };
-		B02E07C716E399EB00C6A12E /* ESRunLoopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E07C116E399EB00C6A12E /* ESRunLoopOperation.m */; };
-		B02E07C816E399EB00C6A12E /* NSMutableURLRequest+ESNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E07C316E399EB00C6A12E /* NSMutableURLRequest+ESNetworking.m */; };
-		B02E07CC16E39D7400C6A12E /* ROBKDatabaseUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E07CB16E39D7400C6A12E /* ROBKDatabaseUpdater.m */; };
 		B02E07CE16E39FA800C6A12E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02E07CD16E39FA800C6A12E /* CoreData.framework */; };
+		B072EDEC16E49E200090BAF6 /* libXcodePicsCoreDataLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B072EDEB16E49E200090BAF6 /* libXcodePicsCoreDataLibrary.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B00CAA1716E3EF8A009FABC0 /* ROBKPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROBKPhoto.h; sourceTree = "<group>"; };
-		B00CAA1816E3EF8A009FABC0 /* ROBKPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROBKPhoto.m; sourceTree = "<group>"; };
-		B00CAA1A16E3F047009FABC0 /* ROBKPhoto+ROBKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ROBKPhoto+ROBKAdditions.h"; sourceTree = "<group>"; };
-		B00CAA1B16E3F047009FABC0 /* ROBKPhoto+ROBKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ROBKPhoto+ROBKAdditions.m"; sourceTree = "<group>"; };
-		B00CAA1E16E3F5D2009FABC0 /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO8601DateFormatter.h; sourceTree = "<group>"; };
-		B00CAA1F16E3F5D2009FABC0 /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISO8601DateFormatter.m; sourceTree = "<group>"; };
-		B00CAA2016E3F5D2009FABC0 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		B0120C9716E4D56100E9E863 /* XcodePicsModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XcodePicsModels.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02E078016E3864400C6A12E /* XcodePics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XcodePics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02E078316E3864400C6A12E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B02E078516E3864400C6A12E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,27 +44,8 @@
 		B02E079F16E3864400C6A12E /* ROBKPhotoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ROBKPhotoListViewController.m; sourceTree = "<group>"; };
 		B02E07A116E3864400C6A12E /* ROBKPhotoDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ROBKPhotoDetailViewController.h; sourceTree = "<group>"; };
 		B02E07A216E3864400C6A12E /* ROBKPhotoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ROBKPhotoDetailViewController.m; sourceTree = "<group>"; };
-		B02E07AA16E3870E00C6A12E /* XcodePics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XcodePics.xcdatamodel; sourceTree = "<group>"; };
-		B02E07AE16E3878900C6A12E /* _DCTCDSManagedObjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DCTCDSManagedObjectContext.h; sourceTree = "<group>"; };
-		B02E07AF16E3878900C6A12E /* _DCTCDSManagedObjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DCTCDSManagedObjectContext.m; sourceTree = "<group>"; };
-		B02E07B016E3878900C6A12E /* DCTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTCoreDataStack.h; sourceTree = "<group>"; };
-		B02E07B116E3878900C6A12E /* DCTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTCoreDataStack.m; sourceTree = "<group>"; };
-		B02E07B216E3878900C6A12E /* NSManagedObjectContext+DCTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+DCTCoreDataStack.h"; sourceTree = "<group>"; };
-		B02E07B316E3878900C6A12E /* NSManagedObjectContext+DCTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+DCTCoreDataStack.m"; sourceTree = "<group>"; };
-		B02E07B716E393B700C6A12E /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
-		B02E07BB16E399EB00C6A12E /* ESHTTPOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESHTTPOperation.h; sourceTree = "<group>"; };
-		B02E07BC16E399EB00C6A12E /* ESHTTPOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESHTTPOperation.m; sourceTree = "<group>"; };
-		B02E07BD16E399EB00C6A12E /* ESJSONOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESJSONOperation.h; sourceTree = "<group>"; };
-		B02E07BE16E399EB00C6A12E /* ESJSONOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESJSONOperation.m; sourceTree = "<group>"; };
-		B02E07BF16E399EB00C6A12E /* ESNetworkError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESNetworkError.h; sourceTree = "<group>"; };
-		B02E07C016E399EB00C6A12E /* ESRunLoopOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRunLoopOperation.h; sourceTree = "<group>"; };
-		B02E07C116E399EB00C6A12E /* ESRunLoopOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRunLoopOperation.m; sourceTree = "<group>"; };
-		B02E07C216E399EB00C6A12E /* NSMutableURLRequest+ESNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+ESNetworking.h"; sourceTree = "<group>"; };
-		B02E07C316E399EB00C6A12E /* NSMutableURLRequest+ESNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+ESNetworking.m"; sourceTree = "<group>"; };
-		B02E07C416E399EB00C6A12E /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		B02E07CA16E39D7400C6A12E /* ROBKDatabaseUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROBKDatabaseUpdater.h; sourceTree = "<group>"; };
-		B02E07CB16E39D7400C6A12E /* ROBKDatabaseUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROBKDatabaseUpdater.m; sourceTree = "<group>"; };
 		B02E07CD16E39FA800C6A12E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B072EDEB16E49E200090BAF6 /* libXcodePicsCoreDataLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libXcodePicsCoreDataLibrary.a; path = "/Code/CoreDataSecrets/Preloading/XcodePicsCoreDataLibrary/build/Release-iphoneos/libXcodePicsCoreDataLibrary.a"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B072EDEC16E49E200090BAF6 /* libXcodePicsCoreDataLibrary.a in Frameworks */,
 				B02E07CE16E39FA800C6A12E /* CoreData.framework in Frameworks */,
 				B02E078416E3864400C6A12E /* UIKit.framework in Frameworks */,
 				B02E078616E3864400C6A12E /* Foundation.framework in Frameworks */,
@@ -98,31 +64,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B00CAA1616E3EF27009FABC0 /* Models */ = {
+		B0120C9616E4D21300E9E863 /* LibraryResources */ = {
 			isa = PBXGroup;
 			children = (
-				B00CAA1716E3EF8A009FABC0 /* ROBKPhoto.h */,
-				B00CAA1816E3EF8A009FABC0 /* ROBKPhoto.m */,
-				B00CAA1A16E3F047009FABC0 /* ROBKPhoto+ROBKAdditions.h */,
-				B00CAA1B16E3F047009FABC0 /* ROBKPhoto+ROBKAdditions.m */,
+				B0120C9716E4D56100E9E863 /* XcodePicsModels.bundle */,
 			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		B00CAA1D16E3F5B8009FABC0 /* iso-8601-date-formatter */ = {
-			isa = PBXGroup;
-			children = (
-				B00CAA1E16E3F5D2009FABC0 /* ISO8601DateFormatter.h */,
-				B00CAA1F16E3F5D2009FABC0 /* ISO8601DateFormatter.m */,
-				B00CAA2016E3F5D2009FABC0 /* LICENSE.txt */,
-			);
-			path = "iso-8601-date-formatter";
-			sourceTree = "<group>";
+			name = LibraryResources;
+			path = "/Users/krismarkel/Library/Developer/Xcode/DerivedData/CoreDataSecrets-aouapbfnbhwasdcwgbbumbznphvj/Build/Products/Debug-iphoneos/../../../../../../../../../../Code/CoreDataSecrets/Preloading/XcodePics";
+			sourceTree = "<absolute>";
 		};
 		B02E077716E3864400C6A12E = {
 			isa = PBXGroup;
 			children = (
-				B02E07AC16E3874700C6A12E /* 3rdParty */,
+				B0120C9616E4D21300E9E863 /* LibraryResources */,
 				B02E078916E3864400C6A12E /* XcodePics */,
 				B02E078216E3864400C6A12E /* Frameworks */,
 				B02E078116E3864400C6A12E /* Products */,
@@ -140,6 +94,7 @@
 		B02E078216E3864400C6A12E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B072EDEB16E49E200090BAF6 /* libXcodePicsCoreDataLibrary.a */,
 				B02E07CD16E39FA800C6A12E /* CoreData.framework */,
 				B02E078316E3864400C6A12E /* UIKit.framework */,
 				B02E078516E3864400C6A12E /* Foundation.framework */,
@@ -151,8 +106,6 @@
 		B02E078916E3864400C6A12E /* XcodePics */ = {
 			isa = PBXGroup;
 			children = (
-				B00CAA1616E3EF27009FABC0 /* Models */,
-				B02E07B916E3973400C6A12E /* DatabaseUpdater */,
 				B02E079216E3864400C6A12E /* ROBKAppDelegate.h */,
 				B02E079316E3864400C6A12E /* ROBKAppDelegate.m */,
 				B02E079B16E3864400C6A12E /* MainStoryboard.storyboard */,
@@ -175,59 +128,8 @@
 				B02E079516E3864400C6A12E /* Default.png */,
 				B02E079716E3864400C6A12E /* Default@2x.png */,
 				B02E079916E3864400C6A12E /* Default-568h@2x.png */,
-				B02E07A916E3870E00C6A12E /* XcodePics.xcdatamodeld */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B02E07AC16E3874700C6A12E /* 3rdParty */ = {
-			isa = PBXGroup;
-			children = (
-				B00CAA1D16E3F5B8009FABC0 /* iso-8601-date-formatter */,
-				B02E07BA16E399EB00C6A12E /* ESNetworking */,
-				B02E07AD16E3878900C6A12E /* DCTCoreDataStack */,
-			);
-			path = 3rdParty;
-			sourceTree = "<group>";
-		};
-		B02E07AD16E3878900C6A12E /* DCTCoreDataStack */ = {
-			isa = PBXGroup;
-			children = (
-				B02E07AE16E3878900C6A12E /* _DCTCDSManagedObjectContext.h */,
-				B02E07AF16E3878900C6A12E /* _DCTCDSManagedObjectContext.m */,
-				B02E07B016E3878900C6A12E /* DCTCoreDataStack.h */,
-				B02E07B116E3878900C6A12E /* DCTCoreDataStack.m */,
-				B02E07B216E3878900C6A12E /* NSManagedObjectContext+DCTCoreDataStack.h */,
-				B02E07B316E3878900C6A12E /* NSManagedObjectContext+DCTCoreDataStack.m */,
-				B02E07B716E393B700C6A12E /* license.txt */,
-			);
-			path = DCTCoreDataStack;
-			sourceTree = "<group>";
-		};
-		B02E07B916E3973400C6A12E /* DatabaseUpdater */ = {
-			isa = PBXGroup;
-			children = (
-				B02E07CA16E39D7400C6A12E /* ROBKDatabaseUpdater.h */,
-				B02E07CB16E39D7400C6A12E /* ROBKDatabaseUpdater.m */,
-			);
-			path = DatabaseUpdater;
-			sourceTree = "<group>";
-		};
-		B02E07BA16E399EB00C6A12E /* ESNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				B02E07BB16E399EB00C6A12E /* ESHTTPOperation.h */,
-				B02E07BC16E399EB00C6A12E /* ESHTTPOperation.m */,
-				B02E07BD16E399EB00C6A12E /* ESJSONOperation.h */,
-				B02E07BE16E399EB00C6A12E /* ESJSONOperation.m */,
-				B02E07BF16E399EB00C6A12E /* ESNetworkError.h */,
-				B02E07C016E399EB00C6A12E /* ESRunLoopOperation.h */,
-				B02E07C116E399EB00C6A12E /* ESRunLoopOperation.m */,
-				B02E07C216E399EB00C6A12E /* NSMutableURLRequest+ESNetworking.h */,
-				B02E07C316E399EB00C6A12E /* NSMutableURLRequest+ESNetworking.m */,
-				B02E07C416E399EB00C6A12E /* README */,
-			);
-			path = ESNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +189,7 @@
 				B02E079816E3864400C6A12E /* Default@2x.png in Resources */,
 				B02E079A16E3864400C6A12E /* Default-568h@2x.png in Resources */,
 				B02E079D16E3864400C6A12E /* MainStoryboard.storyboard in Resources */,
+				B0120C9816E4D56100E9E863 /* XcodePicsModels.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,18 +204,6 @@
 				B02E079416E3864400C6A12E /* ROBKAppDelegate.m in Sources */,
 				B02E07A016E3864400C6A12E /* ROBKPhotoListViewController.m in Sources */,
 				B02E07A316E3864400C6A12E /* ROBKPhotoDetailViewController.m in Sources */,
-				B02E07AB16E3870E00C6A12E /* XcodePics.xcdatamodeld in Sources */,
-				B02E07B416E3878900C6A12E /* _DCTCDSManagedObjectContext.m in Sources */,
-				B02E07B516E3878900C6A12E /* DCTCoreDataStack.m in Sources */,
-				B02E07B616E3878900C6A12E /* NSManagedObjectContext+DCTCoreDataStack.m in Sources */,
-				B02E07C516E399EB00C6A12E /* ESHTTPOperation.m in Sources */,
-				B02E07C616E399EB00C6A12E /* ESJSONOperation.m in Sources */,
-				B02E07C716E399EB00C6A12E /* ESRunLoopOperation.m in Sources */,
-				B02E07C816E399EB00C6A12E /* NSMutableURLRequest+ESNetworking.m in Sources */,
-				B02E07CC16E39D7400C6A12E /* ROBKDatabaseUpdater.m in Sources */,
-				B00CAA1916E3EF8A009FABC0 /* ROBKPhoto.m in Sources */,
-				B00CAA1C16E3F047009FABC0 /* ROBKPhoto+ROBKAdditions.m in Sources */,
-				B00CAA2116E3F5D2009FABC0 /* ISO8601DateFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +256,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				WARNING_CFLAGS = (
@@ -399,6 +291,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -420,6 +313,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XcodePics/XcodePics-Prefix.pch";
 				INFOPLIST_FILE = "XcodePics/XcodePics-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -431,6 +325,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XcodePics/XcodePics-Prefix.pch";
 				INFOPLIST_FILE = "XcodePics/XcodePics-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -458,19 +353,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		B02E07A916E3870E00C6A12E /* XcodePics.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B02E07AA16E3870E00C6A12E /* XcodePics.xcdatamodel */,
-			);
-			currentVersion = B02E07AA16E3870E00C6A12E /* XcodePics.xcdatamodel */;
-			path = XcodePics.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = B02E077816E3864400C6A12E /* Project object */;
 }

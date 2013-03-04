@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B02E077F16E3864400C6A12E"
-               BuildableName = "XcodePics.app"
-               BlueprintName = "XcodePics"
-               ReferencedContainer = "container:XcodePics.xcodeproj">
+               BlueprintIdentifier = "B072EDB416E497090090BAF6"
+               BuildableName = "libXcodePicsCoreDataLibrary.a"
+               BlueprintName = "XcodePicsCoreDataLibrary"
+               ReferencedContainer = "container:XcodePicsCoreDataLibrary.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B072EDB416E497090090BAF6"
-               BuildableName = "libXcodePicsCoreDataLibrary.a"
-               BlueprintName = "XcodePicsCoreDataLibrary"
-               ReferencedContainer = "container:../XcodePicsCoreDataLibrary/XcodePicsCoreDataLibrary.xcodeproj">
+               BlueprintIdentifier = "B0120C8716E4D18300E9E863"
+               BuildableName = "XcodePicsModels.bundle"
+               BlueprintName = "XcodePicsModels"
+               ReferencedContainer = "container:XcodePicsCoreDataLibrary.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -43,15 +43,6 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B02E077F16E3864400C6A12E"
-            BuildableName = "XcodePics.app"
-            BlueprintName = "XcodePics"
-            ReferencedContainer = "container:XcodePics.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -62,15 +53,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B02E077F16E3864400C6A12E"
-            BuildableName = "XcodePics.app"
-            BlueprintName = "XcodePics"
-            ReferencedContainer = "container:XcodePics.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,15 +62,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B02E077F16E3864400C6A12E"
-            BuildableName = "XcodePics.app"
-            BlueprintName = "XcodePics"
-            ReferencedContainer = "container:XcodePics.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

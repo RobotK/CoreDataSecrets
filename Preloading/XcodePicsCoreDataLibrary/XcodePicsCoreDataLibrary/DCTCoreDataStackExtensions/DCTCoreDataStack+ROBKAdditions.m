@@ -11,6 +11,7 @@
 @interface DCTCoreDataStack (ROBKAdditions_private)
 
 + (instancetype) newCoreDataStack_robk; // We need to keep the new at the betting, so we add the robk suffix at the end to prevent possible method name collisions.
++ (NSURL *) databaseURL;
 
 @end
 
@@ -20,16 +21,7 @@
 + (instancetype) newCoreDataStack_robk
 {
 	// Set up the core data stack.
-	NSArray *libraryDirectories = [[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask];
-	NSAssert([libraryDirectories count] > 0, @"There should be at least one library directory!");
-	NSURL *libraryURL = libraryDirectories[0];
-	NSURL *dataDirectoryURL = [libraryURL URLByAppendingPathComponent:@"data"];
-	NSError * __autoreleasing dataDirectoryCreationError;
-	BOOL dataDirectoryCreated = [[NSFileManager defaultManager] createDirectoryAtURL:dataDirectoryURL withIntermediateDirectories:YES attributes:nil error:&dataDirectoryCreationError];
-	if (!dataDirectoryCreated) {
-		NSLog(@"Could not create the data directory. %@", dataDirectoryCreationError);
-	}
-	NSURL *databaseURL = [dataDirectoryURL URLByAppendingPathComponent:@"XcodePics.sqlite"];
+	NSURL *databaseURL = [[self class] databaseURL];
 
 	NSURL *modelBundleURL = [[NSBundle mainBundle] URLForResource:@"XcodePicsModels" withExtension:@"bundle"];
 	NSBundle *modelBundle = [NSBundle bundleWithURL:modelBundleURL];
@@ -38,6 +30,28 @@
 	DCTCoreDataStack *coreDataStack = [[DCTCoreDataStack alloc] initWithStoreURL:databaseURL storeType:NSSQLiteStoreType storeOptions:nil modelConfiguration:nil modelURL:modelURL];
 
 	return coreDataStack;
+}
+
++ (NSURL *)databaseURL
+{
+#if TARGET_OS_IPHONE
+	NSArray *libraryDirectories = [[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask];
+	NSAssert([libraryDirectories count] > 0, @"There should be at least one library directory!");
+	NSURL *libraryURL = libraryDirectories[0];
+#else
+	NSString *currentDirectoryPath = [[NSFileManager defaultManager] currentDirectoryPath];
+	NSURL *libraryURL = [NSURL fileURLWithPath:currentDirectoryPath];
+#endif
+
+	NSURL *dataDirectoryURL = [libraryURL URLByAppendingPathComponent:@"data"];
+	NSError * __autoreleasing dataDirectoryCreationError;
+	BOOL dataDirectoryCreated = [[NSFileManager defaultManager] createDirectoryAtURL:dataDirectoryURL withIntermediateDirectories:YES attributes:nil error:&dataDirectoryCreationError];
+	if (!dataDirectoryCreated) {
+		NSLog(@"Could not create the data directory. %@", dataDirectoryCreationError);
+	}
+	NSURL *databaseURL = [dataDirectoryURL URLByAppendingPathComponent:@"XcodePics.sqlite"];
+
+	return databaseURL;
 }
 
 @end

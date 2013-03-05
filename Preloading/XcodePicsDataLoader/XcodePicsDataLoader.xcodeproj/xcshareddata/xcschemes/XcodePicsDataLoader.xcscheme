@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B006ADA416E5FAC100F1565D"
+               BlueprintIdentifier = "B006ADE516E600BC00F1565D"
                BuildableName = "XcodePicsDataLoader"
                BlueprintName = "XcodePicsDataLoader"
                ReferencedContainer = "container:XcodePicsDataLoader.xcodeproj">
@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B072EDB416E497090090BAF6"
-               BuildableName = "libXcodePicsCoreDataLibrary.a"
-               BlueprintName = "XcodePicsCoreDataLibrary"
+               BlueprintIdentifier = "B006ADC016E5FD9D00F1565D"
+               BuildableName = "XcodePicsCoreDataLibraryOSX.dylib"
+               BlueprintName = "XcodePicsCoreDataLibraryOSX"
                ReferencedContainer = "container:../XcodePicsCoreDataLibrary/XcodePicsCoreDataLibrary.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -60,7 +60,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B006ADA416E5FAC100F1565D"
+            BlueprintIdentifier = "B006ADE516E600BC00F1565D"
             BuildableName = "XcodePicsDataLoader"
             BlueprintName = "XcodePicsDataLoader"
             ReferencedContainer = "container:XcodePicsDataLoader.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B006ADA416E5FAC100F1565D"
+            BlueprintIdentifier = "B006ADE516E600BC00F1565D"
             BuildableName = "XcodePicsDataLoader"
             BlueprintName = "XcodePicsDataLoader"
             ReferencedContainer = "container:XcodePicsDataLoader.xcodeproj">
@@ -97,7 +97,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B006ADA416E5FAC100F1565D"
+            BlueprintIdentifier = "B006ADE516E600BC00F1565D"
             BuildableName = "XcodePicsDataLoader"
             BlueprintName = "XcodePicsDataLoader"
             ReferencedContainer = "container:XcodePicsDataLoader.xcodeproj">

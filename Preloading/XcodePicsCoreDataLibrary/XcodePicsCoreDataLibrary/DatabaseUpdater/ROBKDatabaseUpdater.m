@@ -108,16 +108,31 @@
 			NSAssert([authors count] > 0, @"Not expecting this array to be emtpy");
 			NSDictionary *author = [authors lastObject];
 			NSString * authorName = author[@"name"][@"$t"];
-			photo.author = authorName;
 
-			photo.url = entry[@"content"][@"src"];
+			if (![authorName isEqualToString:photo.author])
+				photo.author = authorName;
 
-			photo.title = entry[@"title"][@"$t"];
-			photo.text = entry[@"summary"][@"$t"];
+			NSString *photoURLString = entry[@"content"][@"src"];
+			if (![photoURLString isEqualToString:photo.url]) {
+				photo.url = photoURLString;
+			}
+
+			NSString *title = entry[@"title"][@"$t"];
+			if (![title isEqualToString:photo.title]) {
+				photo.title = title;
+			}
+
+			NSString *text = entry[@"summary"][@"$t"];
+			if (![text isEqualToString:photo.text]) {
+				photo.text = text;
+			}
 
 			NSString *publishedString = entry[@"published"][@"$t"];
 			if (publishedString && [publishedString length] > 0) {
-				photo.published = [self.dateFormatter dateFromString:publishedString];
+				NSDate *published = [self.dateFormatter dateFromString:publishedString];
+				if (![published isEqualToDate:photo.published]) {
+					photo.published = published;
+				}
 			}
 
 		}

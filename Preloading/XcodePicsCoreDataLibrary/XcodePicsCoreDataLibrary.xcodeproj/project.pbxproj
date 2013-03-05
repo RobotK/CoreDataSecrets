@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B006ADC316E5FD9D00F1565D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B006ADC216E5FD9D00F1565D /* Cocoa.framework */; };
+		B006ADD116E5FDCC00F1565D /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDC816E4983C0090BAF6 /* ISO8601DateFormatter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B006ADD216E5FDD100F1565D /* ESHTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDCC16E4983C0090BAF6 /* ESHTTPOperation.m */; };
+		B006ADD316E5FDD400F1565D /* ESJSONOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDCE16E4983C0090BAF6 /* ESJSONOperation.m */; };
+		B006ADD416E5FDD900F1565D /* ESRunLoopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDD116E4983C0090BAF6 /* ESRunLoopOperation.m */; };
+		B006ADD516E5FDDD00F1565D /* NSMutableURLRequest+ESNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDD316E4983C0090BAF6 /* NSMutableURLRequest+ESNetworking.m */; };
+		B006ADD616E5FDE100F1565D /* _DCTCDSManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDD716E4983C0090BAF6 /* _DCTCDSManagedObjectContext.m */; };
+		B006ADD716E5FDE400F1565D /* DCTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDD916E4983C0090BAF6 /* DCTCoreDataStack.m */; };
+		B006ADD816E5FDE600F1565D /* NSManagedObjectContext+DCTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDDB16E4983C0090BAF6 /* NSManagedObjectContext+DCTCoreDataStack.m */; };
+		B006ADD916E5FDED00F1565D /* DCTCoreDataStack+ROBKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B0120C9B16E4E03D00E9E863 /* DCTCoreDataStack+ROBKAdditions.m */; };
+		B006ADDA16E5FDF200F1565D /* ROBKPhoto+ROBKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDE616E49E0C0090BAF6 /* ROBKPhoto+ROBKAdditions.m */; };
+		B006ADDB16E5FDF600F1565D /* ROBKPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDE816E49E0C0090BAF6 /* ROBKPhoto.m */; };
+		B006ADDC16E5FDFB00F1565D /* ROBKDatabaseUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDDF16E498B00090BAF6 /* ROBKDatabaseUpdater.m */; };
 		B0120C8316E4D0D000E9E863 /* XcodePics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B072EDE116E49D9F0090BAF6 /* XcodePics.xcdatamodeld */; };
 		B0120C8A16E4D18300E9E863 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0120C8916E4D18300E9E863 /* CoreFoundation.framework */; };
 		B0120C9016E4D18300E9E863 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0120C8E16E4D18300E9E863 /* InfoPlist.strings */; };
@@ -59,6 +72,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B006ADC116E5FD9D00F1565D /* XcodePicsCoreDataLibraryOSX.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = XcodePicsCoreDataLibraryOSX.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		B006ADC216E5FD9D00F1565D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		B006ADC516E5FD9D00F1565D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		B006ADC616E5FD9D00F1565D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B006ADC716E5FD9D00F1565D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B006ADCA16E5FD9D00F1565D /* XcodePicsCoreDataLibraryOSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XcodePicsCoreDataLibraryOSX-Prefix.pch"; sourceTree = "<group>"; };
 		B0120C8816E4D18300E9E863 /* XcodePicsModels.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XcodePicsModels.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0120C8916E4D18300E9E863 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		B0120C8D16E4D18300E9E863 /* XcodePicsModels-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XcodePicsModels-Info.plist"; sourceTree = "<group>"; };
@@ -99,6 +118,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B006ADBE16E5FD9D00F1565D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B006ADC316E5FD9D00F1565D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B0120C8516E4D18300E9E863 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -118,6 +145,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B006ADC416E5FD9D00F1565D /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B006ADC516E5FD9D00F1565D /* AppKit.framework */,
+				B006ADC616E5FD9D00F1565D /* CoreData.framework */,
+				B006ADC716E5FD9D00F1565D /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		B006ADC816E5FD9D00F1565D /* XcodePicsCoreDataLibraryOSX */ = {
+			isa = PBXGroup;
+			children = (
+				B006ADC916E5FD9D00F1565D /* Supporting Files */,
+			);
+			path = XcodePicsCoreDataLibraryOSX;
+			sourceTree = "<group>";
+		};
+		B006ADC916E5FD9D00F1565D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B006ADCA16E5FD9D00F1565D /* XcodePicsCoreDataLibraryOSX-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		B0120C8B16E4D18300E9E863 /* XcodePicsModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +204,7 @@
 				B072EDC616E498230090BAF6 /* 3rdParty */,
 				B072EDBA16E497090090BAF6 /* XcodePicsCoreDataLibrary */,
 				B0120C8B16E4D18300E9E863 /* XcodePicsModels */,
+				B006ADC816E5FD9D00F1565D /* XcodePicsCoreDataLibraryOSX */,
 				B072EDB716E497090090BAF6 /* Frameworks */,
 				B072EDB616E497090090BAF6 /* Products */,
 			);
@@ -161,6 +215,7 @@
 			children = (
 				B072EDB516E497090090BAF6 /* libXcodePicsCoreDataLibrary.a */,
 				B0120C8816E4D18300E9E863 /* XcodePicsModels.bundle */,
+				B006ADC116E5FD9D00F1565D /* XcodePicsCoreDataLibraryOSX.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +225,8 @@
 			children = (
 				B072EDB816E497090090BAF6 /* Foundation.framework */,
 				B0120C8916E4D18300E9E863 /* CoreFoundation.framework */,
+				B006ADC216E5FD9D00F1565D /* Cocoa.framework */,
+				B006ADC416E5FD9D00F1565D /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -267,7 +324,34 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		B006ADBF16E5FD9D00F1565D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		B006ADC016E5FD9D00F1565D /* XcodePicsCoreDataLibraryOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B006ADD016E5FD9D00F1565D /* Build configuration list for PBXNativeTarget "XcodePicsCoreDataLibraryOSX" */;
+			buildPhases = (
+				B006ADBD16E5FD9D00F1565D /* Sources */,
+				B006ADBE16E5FD9D00F1565D /* Frameworks */,
+				B006ADBF16E5FD9D00F1565D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XcodePicsCoreDataLibraryOSX;
+			productName = XcodePicsCoreDataLibraryOSX;
+			productReference = B006ADC116E5FD9D00F1565D /* XcodePicsCoreDataLibraryOSX.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
 		B0120C8716E4D18300E9E863 /* XcodePicsModels */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0120C9216E4D18300E9E863 /* Build configuration list for PBXNativeTarget "XcodePicsModels" */;
@@ -325,6 +409,7 @@
 			targets = (
 				B072EDB416E497090090BAF6 /* XcodePicsCoreDataLibrary */,
 				B0120C8716E4D18300E9E863 /* XcodePicsModels */,
+				B006ADC016E5FD9D00F1565D /* XcodePicsCoreDataLibraryOSX */,
 			);
 		};
 /* End PBXProject section */
@@ -341,6 +426,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B006ADBD16E5FD9D00F1565D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B006ADD116E5FDCC00F1565D /* ISO8601DateFormatter.m in Sources */,
+				B006ADD216E5FDD100F1565D /* ESHTTPOperation.m in Sources */,
+				B006ADD716E5FDE400F1565D /* DCTCoreDataStack.m in Sources */,
+				B006ADD416E5FDD900F1565D /* ESRunLoopOperation.m in Sources */,
+				B006ADD816E5FDE600F1565D /* NSManagedObjectContext+DCTCoreDataStack.m in Sources */,
+				B006ADD616E5FDE100F1565D /* _DCTCDSManagedObjectContext.m in Sources */,
+				B006ADD516E5FDDD00F1565D /* NSMutableURLRequest+ESNetworking.m in Sources */,
+				B006ADD316E5FDD400F1565D /* ESJSONOperation.m in Sources */,
+				B006ADD916E5FDED00F1565D /* DCTCoreDataStack+ROBKAdditions.m in Sources */,
+				B006ADDA16E5FDF200F1565D /* ROBKPhoto+ROBKAdditions.m in Sources */,
+				B006ADDB16E5FDF600F1565D /* ROBKPhoto.m in Sources */,
+				B006ADDC16E5FDFB00F1565D /* ROBKDatabaseUpdater.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B0120C8416E4D18300E9E863 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -383,6 +487,47 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B006ADCE16E5FD9D00F1565D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XcodePicsCoreDataLibraryOSX/XcodePicsCoreDataLibraryOSX-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B006ADCF16E5FD9D00F1565D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XcodePicsCoreDataLibraryOSX/XcodePicsCoreDataLibraryOSX-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		B0120C9316E4D18300E9E863 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -500,6 +645,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B006ADD016E5FD9D00F1565D /* Build configuration list for PBXNativeTarget "XcodePicsCoreDataLibraryOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B006ADCE16E5FD9D00F1565D /* Debug */,
+				B006ADCF16E5FD9D00F1565D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B0120C9216E4D18300E9E863 /* Build configuration list for PBXNativeTarget "XcodePicsModels" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -507,6 +660,7 @@
 				B0120C9416E4D18300E9E863 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B072EDB016E497090090BAF6 /* Build configuration list for PBXProject "XcodePicsCoreDataLibrary" */ = {
 			isa = XCConfigurationList;

@@ -11,7 +11,6 @@
 @interface DCTCoreDataStack (ROBKAdditions_private)
 
 + (instancetype) newCoreDataStack_robk; // We need to keep the new at the betting, so we add the robk suffix at the end to prevent possible method name collisions.
-+ (NSURL *) databaseURL;
 
 @end
 
@@ -30,6 +29,22 @@
 	DCTCoreDataStack *coreDataStack = [[DCTCoreDataStack alloc] initWithStoreURL:databaseURL storeType:NSSQLiteStoreType storeOptions:nil modelConfiguration:nil modelURL:modelURL];
 
 	return coreDataStack;
+}
+
+@end
+
+@implementation DCTCoreDataStack (ROBKAdditions)
+
++ (instancetype) sharedCoreDataStack
+{
+	static id sharedInstace;
+
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		sharedInstace = [self newCoreDataStack_robk];
+	});
+
+	return sharedInstace;
 }
 
 + (NSURL *)databaseURL
@@ -52,22 +67,6 @@
 	NSURL *databaseURL = [dataDirectoryURL URLByAppendingPathComponent:@"XcodePics.sqlite"];
 
 	return databaseURL;
-}
-
-@end
-
-@implementation DCTCoreDataStack (ROBKAdditions)
-
-+ (instancetype) sharedCoreDataStack
-{
-	static id sharedInstace;
-
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{
-		sharedInstace = [self newCoreDataStack_robk];
-	});
-
-	return sharedInstace;
 }
 
 @end

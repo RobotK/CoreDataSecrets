@@ -11,5 +11,6 @@
 @interface DCTCoreDataStack (ROBKAdditions)
 
 + (instancetype) sharedCoreDataStack;
++ (NSURL *) databaseURL;
 
 @end

@@ -32,13 +32,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	// If there's no database file in the data directory, copy the one from the bundle.
+	NSURL *databaseURL = [DCTCoreDataStack databaseURL];
+	// Intentionally ignoring the error info here.
+	if (![databaseURL checkResourceIsReachableAndReturnError:NULL]) { 
+		NSURL *includedDatabaseURL = [[NSBundle mainBundle] URLForResource:@"XcodePics" withExtension:@"sqlite"];
+		NSError * __autoreleasing fileCopyError;
+		BOOL fileCopied = [[NSFileManager defaultManager] copyItemAtURL:includedDatabaseURL toURL:databaseURL error:&fileCopyError];
+		if (!fileCopied) {
+			NSLog(@"Error copying file. %@", fileCopyError);
+		}
+	}
+
 	self.coreDataStack = [DCTCoreDataStack sharedCoreDataStack];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSaveNotificationHandler:) name:NSManagedObjectContextDidSaveNotification object:nil];
 
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 		self.databaseUpdater = [ROBKDatabaseUpdater new];
-		NSURL *flickrXcodeURL = [NSURL URLWithString:@"https://picasaweb.google.com/data/feed/api/all?kind=photo&q=xcode&alt=json"];
+		NSURL *flickrXcodeURL = [NSURL URLWithString:@"http://picasaweb.google.com/data/feed/api/all?kind=photo&q=xcode&alt=json"];
 		[self.databaseUpdater loadJSONFromURL:flickrXcodeURL];
 	});
 

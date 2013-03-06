@@ -50,8 +50,8 @@
 
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 		self.databaseUpdater = [ROBKDatabaseUpdater new];
-		NSURL *flickrXcodeURL = [NSURL URLWithString:@"http://picasaweb.google.com/data/feed/api/all?kind=photo&q=xcode&alt=json"];
-		[self.databaseUpdater loadJSONFromURL:flickrXcodeURL];
+		NSURL *XcodePicsURL = [NSURL URLWithString:@"http://picasaweb.google.com/data/feed/api/all?kind=photo&q=xcode&alt=json"];
+		[self.databaseUpdater loadJSONFromURL:XcodePicsURL];
 	});
 
 	return YES;

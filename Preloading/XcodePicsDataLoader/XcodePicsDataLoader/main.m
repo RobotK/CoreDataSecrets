@@ -14,8 +14,8 @@ int main(int argc, const char * argv[])
 	@autoreleasepool {
 
 		ROBKDatabaseUpdater *databaseUpdater = [ROBKDatabaseUpdater new];
-		NSURL *flickrXcodeURL = [NSURL URLWithString:@"http://picasaweb.google.com/data/feed/api/all?kind=photo&q=xcode&alt=json"];
-		[databaseUpdater synchronousLoadJSONFromURL:flickrXcodeURL];
+		NSURL *XcodePicsURL = [NSURL URLWithString:@"http://picasaweb.google.com/data/feed/api/all?kind=photo&q=xcode&alt=json"];
+		[databaseUpdater synchronousLoadJSONFromURL:XcodePicsURL];
 
 	}
     return 0;

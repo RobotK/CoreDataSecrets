@@ -20,6 +20,20 @@
                ReferencedContainer = "container:XcodePicsCoreDataLibrary.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B0120C8716E4D18300E9E863"
+               BuildableName = "XcodePicsModels.bundle"
+               BlueprintName = "XcodePicsModels"
+               ReferencedContainer = "container:XcodePicsCoreDataLibrary.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

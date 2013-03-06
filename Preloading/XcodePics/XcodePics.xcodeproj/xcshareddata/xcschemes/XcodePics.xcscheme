@@ -31,7 +31,7 @@
                BlueprintIdentifier = "B072EDB416E497090090BAF6"
                BuildableName = "libXcodePicsCoreDataLibrary.a"
                BlueprintName = "XcodePicsCoreDataLibrary"
-               ReferencedContainer = "container:../XcodePicsCoreDataLibrary/XcodePicsCoreDataLibrary.xcodeproj">
+               ReferencedContainer = "container:../../Core/XcodePicsCoreDataLibrary/XcodePicsCoreDataLibrary.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "B0120C8716E4D18300E9E863"
                BuildableName = "XcodePicsModels.bundle"
                BlueprintName = "XcodePicsModels"
-               ReferencedContainer = "container:../XcodePicsCoreDataLibrary/XcodePicsCoreDataLibrary.xcodeproj">
+               ReferencedContainer = "container:../../Core/XcodePicsCoreDataLibrary/XcodePicsCoreDataLibrary.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

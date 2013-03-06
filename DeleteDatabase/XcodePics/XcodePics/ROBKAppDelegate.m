@@ -32,18 +32,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	// If there's no database file in the data directory, copy the one from the bundle.
-	NSURL *databaseURL = [DCTCoreDataStack databaseURL];
-	// Intentionally ignoring the error info here.
-	if (![databaseURL checkResourceIsReachableAndReturnError:NULL]) { 
-		NSURL *includedDatabaseURL = [[NSBundle mainBundle] URLForResource:@"XcodePics" withExtension:@"sqlite"];
-		NSError * __autoreleasing fileCopyError;
-		BOOL fileCopied = [[NSFileManager defaultManager] copyItemAtURL:includedDatabaseURL toURL:databaseURL error:&fileCopyError];
-		if (!fileCopied) {
-			NSLog(@"Error copying file. %@", fileCopyError);
-		}
-	}
-
 	self.coreDataStack = [DCTCoreDataStack sharedCoreDataStack];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSaveNotificationHandler:) name:NSManagedObjectContextDidSaveNotification object:nil];

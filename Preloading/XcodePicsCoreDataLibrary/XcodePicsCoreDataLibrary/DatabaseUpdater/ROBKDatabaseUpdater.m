@@ -16,6 +16,8 @@
 #import "ESJSONOperation.h"
 #import "ISO8601DateFormatter.h"
 
+const NSUInteger ROBKDatabaseUpdaterSaveFrequency = 50;
+
 @interface ROBKDatabaseUpdater ()
 
 @property (nonatomic, strong, readonly) DCTCoreDataStack *coreDataStack;
@@ -77,6 +79,8 @@
 
 		NSDictionary *feed = JSON[@"feed"];
 
+        NSUInteger updateCount = 0;
+
 		for (NSDictionary *entry in feed[@"entry"]) {
 
 			NSDictionary *identifierDictionary = entry[@"id"];
@@ -134,6 +138,18 @@
 					photo.published = published;
 				}
 			}
+
+            if ([moc hasChanges]) {
+                updateCount = updateCount + 1;
+                if (updateCount % ROBKDatabaseUpdaterSaveFrequency == 0) {
+                    // Save periodically so a giant save doesn't cause the UI to hiccup.
+                    NSError * __autoreleasing saveError;
+                    BOOL saved = [moc save:&saveError];
+                    if (!saved) {
+                        NSLog(@"Error saving: %@", saveError);
+                    }
+                }
+            }
 
 		}
 

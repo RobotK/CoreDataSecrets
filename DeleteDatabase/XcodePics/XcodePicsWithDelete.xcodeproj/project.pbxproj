@@ -22,6 +22,7 @@
 		B02E07A316E3864400C6A12E /* ROBKPhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02E07A216E3864400C6A12E /* ROBKPhotoDetailViewController.m */; };
 		B02E07CE16E39FA800C6A12E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02E07CD16E39FA800C6A12E /* CoreData.framework */; };
 		B072EDEC16E49E200090BAF6 /* libXcodePicsCoreDataLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B072EDEB16E49E200090BAF6 /* libXcodePicsCoreDataLibrary.a */; };
+		B0D2FC2416E8BEC900F9D26F /* ROBKCoreDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D2FC2316E8BEC900F9D26F /* ROBKCoreDataCoordinator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		B02E07A216E3864400C6A12E /* ROBKPhotoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ROBKPhotoDetailViewController.m; sourceTree = "<group>"; };
 		B02E07CD16E39FA800C6A12E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B072EDEB16E49E200090BAF6 /* libXcodePicsCoreDataLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libXcodePicsCoreDataLibrary.a; path = "/Code/CoreDataSecrets/Preloading/XcodePicsCoreDataLibrary/build/Release-iphoneos/libXcodePicsCoreDataLibrary.a"; sourceTree = "<absolute>"; };
+		B0D2FC2216E8BEC900F9D26F /* ROBKCoreDataCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROBKCoreDataCoordinator.h; sourceTree = "<group>"; };
+		B0D2FC2316E8BEC900F9D26F /* ROBKCoreDataCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROBKCoreDataCoordinator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,7 @@
 		B02E077716E3864400C6A12E = {
 			isa = PBXGroup;
 			children = (
+				B0D2FC2116E8BB5100F9D26F /* CoreDataManager */,
 				B0120C9616E4D21300E9E863 /* LibraryResources */,
 				B02E078916E3864400C6A12E /* XcodePics */,
 				B02E078216E3864400C6A12E /* Frameworks */,
@@ -130,6 +134,15 @@
 				B02E079916E3864400C6A12E /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B0D2FC2116E8BB5100F9D26F /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B0D2FC2216E8BEC900F9D26F /* ROBKCoreDataCoordinator.h */,
+				B0D2FC2316E8BEC900F9D26F /* ROBKCoreDataCoordinator.m */,
+			);
+			path = CoreDataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +217,7 @@
 				B02E079416E3864400C6A12E /* ROBKAppDelegate.m in Sources */,
 				B02E07A016E3864400C6A12E /* ROBKPhotoListViewController.m in Sources */,
 				B02E07A316E3864400C6A12E /* ROBKPhotoDetailViewController.m in Sources */,
+				B0D2FC2416E8BEC900F9D26F /* ROBKCoreDataCoordinator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

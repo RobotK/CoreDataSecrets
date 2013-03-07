@@ -10,6 +10,16 @@
 
 #import "XCodePicsCoreDataLibrary/DCTCoreDataStack+ROBKAdditions.h"
 
+#define LOG_WRITE_TIMES
+#define ASSERT_ON_LONG_WRITES
+
+#ifdef ASSERT_ON_LONG_WRITES
+
+const NSTimeInterval longWriteThresholdInSeconds = 3.0f;
+
+#endif
+
+
 NSString * const ROBKCoordinatorDataUpdateNotification = @"ROBKCoordinatorDataUpdateNotification";
 NSString * const ROBKCoordinatorChangedObjectsKey = @"ROBKCoordinatorChangedObjectsKey";
 NSString * const ROBKCoordinatorOriginalNotificationUserInfoKey = @"ROBKCoordinatorOriginalNotificationUserInfoKey";
@@ -111,6 +121,10 @@ NSString * const ROBKCoordinatorOriginalNotificationUserInfoKey = @"ROBKCoordina
 
 - (void) coordinateWritingWithBlock:(ROBKCoreDataCoordinatorBlock)block
 {
+#ifdef LOG_WRITE_TIMES
+	 NSTimeInterval writingRequestedTimeInterval = [NSDate timeIntervalSinceReferenceDate];
+#endif
+
     NSBlockOperation *coordinatedWriteOperation = [NSBlockOperation new];
 
     // Make a weak reference to avoid a retain cycle.
@@ -149,8 +163,29 @@ NSString * const ROBKCoordinatorOriginalNotificationUserInfoKey = @"ROBKCoordina
 					 });
 				}];
 
+#ifdef LOG_WRITE_TIMES
+				NSTimeInterval writingStartedTimeInterval = [NSDate timeIntervalSinceReferenceDate];
+				NSTimeInterval secondsFromRequestToStart = writingStartedTimeInterval - writingRequestedTimeInterval;
+
+				NSLog(@"Coordinated writing time from request to start of execution: %f.", secondsFromRequestToStart);
+#endif
+
 				block(context, strongWriteOperation);
 
+#ifdef LOG_WRITE_TIMES
+				NSTimeInterval writingFinishedTimeInterval = [NSDate timeIntervalSinceReferenceDate];
+				NSTimeInterval secondsFromStartToFinish = writingFinishedTimeInterval - writingStartedTimeInterval;
+				NSTimeInterval secondsFromRequestToFinish = writingFinishedTimeInterval - writingRequestedTimeInterval;
+
+				NSLog(@"Coordinated writing time from start of execution to finish: %f", secondsFromStartToFinish);
+				NSLog(@"Coordinated writing time from request to finish: %f", secondsFromRequestToFinish);
+
+#ifdef ASSERT_ON_LONG_WRITES
+				NSCAssert(secondsFromRequestToFinish < longWriteThresholdInSeconds, @"Write interval was too long. Interval: %f. Threshold: %f", secondsFromRequestToFinish, longWriteThresholdInSeconds);
+#endif
+				
+#endif // LOG_WRITE_TIMES
+				
 				[[NSNotificationCenter defaultCenter] removeObserver:observation];
         }
 

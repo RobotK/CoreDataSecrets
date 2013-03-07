@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 RobotK. All rights reserved.
 //
 
-#import "XCodePicsCoreDataLibrary/DCTCoreDataStack+ROBKAdditions.h"
-
 #import "ROBKCoreDataCoordinator.h"
+
+#import "XCodePicsCoreDataLibrary/DCTCoreDataStack+ROBKAdditions.h"
 
 NSString * const ROBKCoordinatorDataUpdateNotification = @"ROBKCoordinatorDataUpdateNotification";
 NSString * const ROBKCoordinatorChangedObjectsKey = @"ROBKCoordinatorChangedObjectsKey";

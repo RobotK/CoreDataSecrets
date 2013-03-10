@@ -132,6 +132,7 @@
 		B006ADDE16E600BC00F1565D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ROBK;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Kris Markel";
 			};

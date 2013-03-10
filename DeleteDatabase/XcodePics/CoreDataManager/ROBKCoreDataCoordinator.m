@@ -21,7 +21,7 @@ const NSTimeInterval longWriteThresholdInSeconds = 3.0f;
 
 
 NSString * const ROBKCoordinatorDataUpdateNotification = @"ROBKCoordinatorDataUpdateNotification";
-NSString * const ROBKCoordinatorDatabaseDeletedeNotification = @"ROBKCoordinatorDatabaseDeletedeNotification";
+NSString * const ROBKCoordinatorDatabaseDeletedNotification = @"ROBKCoordinatorDatabaseDeletedNotification";
 
 NSString * const ROBKCoordinatorChangedObjectsKey = @"ROBKCoordinatorChangedObjectsKey";
 NSString * const ROBKCoordinatorOriginalNotificationUserInfoKey = @"ROBKCoordinatorOriginalNotificationUserInfoKey";
@@ -230,7 +230,7 @@ NSString * const ROBKCoordinatorOriginalNotificationUserInfoKey = @"ROBKCoordina
 		  }
 
 		  if (success) {
-				[[NSNotificationCenter defaultCenter] postNotificationName:ROBKCoordinatorDatabaseDeletedeNotification object:nil];
+				[[NSNotificationCenter defaultCenter] postNotificationName:ROBKCoordinatorDatabaseDeletedNotification object:nil];
 		  }
 		  callback(success);
 	 });

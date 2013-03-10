@@ -27,7 +27,7 @@
 extern NSString * const ROBKCoordinatorDataUpdateNotification;
 
 /** This notification is fired after the database file has been deleted. The userinfo dictionary is empty. */
-extern NSString * const ROBKCoordinatorDatabaseDeletedeNotification;
+extern NSString * const ROBKCoordinatorDatabaseDeletedNotification;
 
 /** This returns a set that contains every object that's been inserted, deleted, or updated by the latest core data save. It's useful to determine if there have been any changes to a particular entity type that you're class is interensted in. */
 extern NSString * const ROBKCoordinatorChangedObjectsKey;

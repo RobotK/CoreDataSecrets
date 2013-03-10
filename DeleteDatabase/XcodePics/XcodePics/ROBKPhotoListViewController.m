@@ -46,7 +46,7 @@
 	 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataLoaderDidStartNotification:) name:ROBKDataLoaderDidStart object:nil];
 	 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataLoaderDidFinishNotification:) name:ROBKDataLoaderDidFinish object:nil];
 
-	 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDatabaseDeletedNotification:) name:ROBKCoordinatorDatabaseDeletedeNotification object:nil];
+	 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDatabaseDeletedNotification:) name:ROBKCoordinatorDatabaseDeletedNotification object:nil];
 }
 
 - (void)viewDidLoad
@@ -71,7 +71,7 @@
 	 [[NSNotificationCenter defaultCenter] removeObserver:self name:ROBKDataLoaderDidStart object:nil];
 	 [[NSNotificationCenter defaultCenter] removeObserver:self name:ROBKDataLoaderDidFinish object:nil];
 
-	 [[NSNotificationCenter defaultCenter] removeObserver:self name:ROBKCoordinatorDatabaseDeletedeNotification object:nil];
+	 [[NSNotificationCenter defaultCenter] removeObserver:self name:ROBKCoordinatorDatabaseDeletedNotification object:nil];
 }
 
 #pragma mark - Table View

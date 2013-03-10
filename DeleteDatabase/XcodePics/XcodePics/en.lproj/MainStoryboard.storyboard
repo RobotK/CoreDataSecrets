@@ -119,7 +119,13 @@
                             <constraint firstAttribute="trailing" secondItem="27" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pRe-qY-58T"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="26"/>
+                    <navigationItem key="navigationItem" title="Detail" id="26">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="JgM-GP-4CR">
+                            <connections>
+                                <action selector="composeButtonTapped:" destination="21" id="d8a-1Y-SdZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="27" id="28"/>
                         <outlet property="imageView" destination="LhW-82-ZpQ" id="0Um-N2-GW4"/>

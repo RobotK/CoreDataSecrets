@@ -11,6 +11,8 @@
 #import "XcodePicsCoreDataLibrary/ESHTTPOperation.h"
 #import "XcodePicsCoreDataLibrary/ROBKPhoto.h"
 
+#import "ROBKCoreDataCoordinator.h"
+
 @interface ROBKPhotoDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
@@ -18,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *publishedDateLabel;
 
 @property (nonatomic, strong, readonly) NSOperationQueue *downloadQueue;
+
+- (IBAction)composeButtonTapped:(id)sender;
 
 - (void)configureView;
 - (void)downloadPhoto;
@@ -75,6 +79,37 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Actions
+
+- (IBAction)composeButtonTapped:(id)sender {
+
+	 [[ROBKCoreDataCoordinator sharedCoordinator] coordinateWritingWithBlock:^(NSManagedObjectContext *context, NSOperation *operation) {
+
+		  if ([operation isCancelled]) {
+				return;
+		  }
+
+		  NSError __autoreleasing *existingObjectError;
+		  ROBKPhoto *photo = (ROBKPhoto *)[context existingObjectWithID:self.photo.objectID error:&existingObjectError];
+		  if (!photo) {
+				NSLog(@"Error getting object. %@", existingObjectError);
+				return;
+		  }
+
+		  photo.published = [NSDate date];
+
+		  if ([context hasChanges]) {
+				NSError __autoreleasing *saveError;
+				BOOL saved = [context save:&saveError];
+				if (!saved) {
+					 NSLog(@"Error saving. %@", saveError);
+				}
+		  }
+	 }];
+
+}
+
 
 #pragma mark - Helpers
 

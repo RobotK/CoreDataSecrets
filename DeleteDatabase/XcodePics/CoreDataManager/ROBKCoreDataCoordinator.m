@@ -127,79 +127,84 @@ NSString * const ROBKCoordinatorOriginalNotificationUserInfoKey = @"ROBKCoordina
 	 NSTimeInterval writingRequestedTimeInterval = [NSDate timeIntervalSinceReferenceDate];
 #endif
 
-    NSBlockOperation *coordinatedWriteOperation = [NSBlockOperation new];
+	 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
-    // Make a weak reference to avoid a retain cycle.
-    __weak NSBlockOperation *weakWriteOperation = coordinatedWriteOperation;
+		  NSBlockOperation *coordinatedWriteOperation = [NSBlockOperation new];
 
-    [coordinatedWriteOperation addExecutionBlock:^{
+		  // Make a weak reference to avoid a retain cycle.
+		  __weak NSBlockOperation *weakWriteOperation = coordinatedWriteOperation;
 
-        @autoreleasepool {
-            __strong NSBlockOperation *strongWriteOperation = weakWriteOperation;
-            if (!strongWriteOperation) {
-                return;
-            }
+		  [coordinatedWriteOperation addExecutionBlock:^{
 
-            if (strongWriteOperation.isCancelled) {
-                return;
-            }
+				@autoreleasepool {
+					 __strong NSBlockOperation *strongWriteOperation = weakWriteOperation;
+					 if (!strongWriteOperation) {
+						  return;
+					 }
 
-            NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSConfinementConcurrencyType];
-				context.persistentStoreCoordinator = self.coreDataStack.persistentStoreCoordinator;
-				context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy;
+					 if (strongWriteOperation.isCancelled) {
+						  return;
+					 }
 
-				id observation = [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextDidSaveNotification object:context queue:nil usingBlock:^(NSNotification *note) {
-					 dispatch_sync(dispatch_get_main_queue(), ^{
-						  @autoreleasepool {
-								[[self mainThreadContext] mergeChangesFromContextDidSaveNotification:note];
+					 NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSConfinementConcurrencyType];
+					 context.persistentStoreCoordinator = self.coreDataStack.persistentStoreCoordinator;
+					 context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy;
 
-								NSDictionary *originalUserInfo = [note userInfo];
-								NSMutableSet *changedObjectsSet = [NSMutableSet setWithSet:[originalUserInfo objectForKey:NSInsertedObjectsKey]];
-								[changedObjectsSet addObjectsFromArray:[[originalUserInfo objectForKey:NSUpdatedObjectsKey] allObjects]];
-								[changedObjectsSet addObjectsFromArray:[[originalUserInfo objectForKey:NSDeletedObjectsKey] allObjects]];
+					 id observation = [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextDidSaveNotification object:context queue:nil usingBlock:^(NSNotification *note) {
+						  dispatch_sync(dispatch_get_main_queue(), ^{
+								@autoreleasepool {
+									 [[self mainThreadContext] mergeChangesFromContextDidSaveNotification:note];
 
-								NSDictionary *userInfo = @{ROBKCoordinatorOriginalNotificationUserInfoKey : originalUserInfo, ROBKCoordinatorChangedObjectsKey: changedObjectsSet};
+									 NSDictionary *originalUserInfo = [note userInfo];
+									 NSMutableSet *changedObjectsSet = [NSMutableSet setWithSet:[originalUserInfo objectForKey:NSInsertedObjectsKey]];
+									 [changedObjectsSet addObjectsFromArray:[[originalUserInfo objectForKey:NSUpdatedObjectsKey] allObjects]];
+									 [changedObjectsSet addObjectsFromArray:[[originalUserInfo objectForKey:NSDeletedObjectsKey] allObjects]];
 
-								[[NSNotificationCenter defaultCenter] postNotificationName:ROBKCoordinatorDataUpdateNotification object:[self mainThreadContext] userInfo:userInfo];
-						  }
-					 });
-				}];
+									 NSDictionary *userInfo = @{ROBKCoordinatorOriginalNotificationUserInfoKey : originalUserInfo, ROBKCoordinatorChangedObjectsKey: changedObjectsSet};
+
+									 [[NSNotificationCenter defaultCenter] postNotificationName:ROBKCoordinatorDataUpdateNotification object:[self mainThreadContext] userInfo:userInfo];
+								}
+						  });
+					 }];
 
 #ifdef LOG_WRITE_TIMES
-				NSTimeInterval writingStartedTimeInterval = [NSDate timeIntervalSinceReferenceDate];
-				NSTimeInterval secondsFromRequestToStart = writingStartedTimeInterval - writingRequestedTimeInterval;
+					 NSTimeInterval writingStartedTimeInterval = [NSDate timeIntervalSinceReferenceDate];
+					 NSTimeInterval secondsFromRequestToStart = writingStartedTimeInterval - writingRequestedTimeInterval;
 
-				NSLog(@"Coordinated writing time from request to start of execution: %f.", secondsFromRequestToStart);
+					 NSLog(@"Coordinated writing time from request to start of execution: %f.", secondsFromRequestToStart);
 #endif
 
-				block(context, strongWriteOperation);
+					 block(context, strongWriteOperation);
 
 #ifdef LOG_WRITE_TIMES
-				NSTimeInterval writingFinishedTimeInterval = [NSDate timeIntervalSinceReferenceDate];
-				NSTimeInterval secondsFromStartToFinish = writingFinishedTimeInterval - writingStartedTimeInterval;
-				NSTimeInterval secondsFromRequestToFinish = writingFinishedTimeInterval - writingRequestedTimeInterval;
+					 NSTimeInterval writingFinishedTimeInterval = [NSDate timeIntervalSinceReferenceDate];
+					 NSTimeInterval secondsFromStartToFinish = writingFinishedTimeInterval - writingStartedTimeInterval;
+					 NSTimeInterval secondsFromRequestToFinish = writingFinishedTimeInterval - writingRequestedTimeInterval;
 
-				NSLog(@"Coordinated writing time from start of execution to finish: %f", secondsFromStartToFinish);
-				NSLog(@"Coordinated writing time from request to finish: %f", secondsFromRequestToFinish);
+					 NSLog(@"Coordinated writing time from start of execution to finish: %f", secondsFromStartToFinish);
+					 NSLog(@"Coordinated writing time from request to finish: %f", secondsFromRequestToFinish);
 
 #ifdef ASSERT_ON_LONG_WRITES
-				NSCAssert(secondsFromRequestToFinish < longWriteThresholdInSeconds, @"Write interval was too long. Interval: %f. Threshold: %f", secondsFromRequestToFinish, longWriteThresholdInSeconds);
+					 NSCAssert(secondsFromRequestToFinish < longWriteThresholdInSeconds, @"Write interval was too long. Interval: %f. Threshold: %f", secondsFromRequestToFinish, longWriteThresholdInSeconds);
 #endif
-				
+
 #endif // LOG_WRITE_TIMES
-				
-				[[NSNotificationCenter defaultCenter] removeObserver:observation];
-        }
 
-    }];
+					 [[NSNotificationCenter defaultCenter] removeObserver:observation];
+				}
 
-    // This may block for a while as we wait for other operations to complete, so we want to make sure we're not on the main thread.
-    NSAssert(![NSThread isMainThread], @"We're probably blocking the main thread!");
+		  }];
 
-    // Wait for other operations to finish.
-    [self.coreDataOperationQueue waitUntilAllOperationsAreFinished];
-	 
-    [self.coreDataOperationQueue addOperation:coordinatedWriteOperation];
+		  // This may block for a while as we wait for other operations to complete, so we want to make sure we're not on the main thread.
+		  NSAssert(![NSThread isMainThread], @"We're probably blocking the main thread!");
+
+		  // Wait for other operations to finish.
+		  [self.coreDataOperationQueue waitUntilAllOperationsAreFinished];
+		  
+		  [self.coreDataOperationQueue addOperation:coordinatedWriteOperation];
+
+	 });
+
 }
 
 -(void)deleteDataStore:(void(^)(BOOL success))callback

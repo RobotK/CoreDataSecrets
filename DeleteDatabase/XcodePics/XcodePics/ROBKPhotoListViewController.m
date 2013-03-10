@@ -120,7 +120,7 @@
 	[fetchRequest setFetchBatchSize:20];
 
 	// Edit the sort key as appropriate.
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"published" ascending:YES];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"published" ascending:NO];
 	NSArray *sortDescriptors = @[sortDescriptor];
 
 	[fetchRequest setSortDescriptors:sortDescriptors];

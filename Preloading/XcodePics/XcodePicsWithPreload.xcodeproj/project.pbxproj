@@ -163,7 +163,7 @@
 			attributes = {
 				CLASSPREFIX = ROBK;
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = RobotK;
+				ORGANIZATIONNAME = "Kris Markel";
 			};
 			buildConfigurationList = B02E077B16E3864400C6A12E /* Build configuration list for PBXProject "XcodePicsWithPreload" */;
 			compatibilityVersion = "Xcode 3.2";

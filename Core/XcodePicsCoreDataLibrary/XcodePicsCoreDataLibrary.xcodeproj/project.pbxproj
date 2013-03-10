@@ -399,7 +399,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = RobotK;
+				ORGANIZATIONNAME = "Kris Markel";
 			};
 			buildConfigurationList = B072EDB016E497090090BAF6 /* Build configuration list for PBXProject "XcodePicsCoreDataLibrary" */;
 			compatibilityVersion = "Xcode 3.2";

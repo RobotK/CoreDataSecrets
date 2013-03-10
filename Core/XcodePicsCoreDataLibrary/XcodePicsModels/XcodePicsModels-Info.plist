@@ -41,6 +41,6 @@
 	<key>CFPlugInUnloadFunction</key>
 	<string></string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2013 RobotK. All rights reserved.</string>
+	<string>Copyright (c) 2013 Kris Markel. See License.txt for details.</string>
 </dict>
 </plist>

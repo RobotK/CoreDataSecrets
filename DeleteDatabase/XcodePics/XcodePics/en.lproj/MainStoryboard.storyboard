@@ -82,24 +82,39 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="LhW-82-ZpQ">
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="500" constant="260" type="user" id="Ges-iO-gen"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfa-0f-A4f" userLabel="Published">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" type="user" id="Rnc-qc-Mok"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" minimumFontSize="10" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="27">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" type="user" id="vZz-dh-nTM"/>
+                                    <constraint firstAttribute="height" priority="500" constant="70" type="user" id="vZz-dh-nTM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" size="system"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="LhW-82-ZpQ"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="LhW-82-ZpQ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="3oK-hm-ifV"/>
-                            <constraint firstAttribute="bottom" secondItem="LhW-82-ZpQ" secondAttribute="bottom" constant="135" type="user" id="BCH-Dj-17d"/>
+                            <constraint firstItem="Rfa-0f-A4f" firstAttribute="top" secondItem="LhW-82-ZpQ" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="EUx-SJ-KCK"/>
                             <constraint firstItem="LhW-82-ZpQ" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="NA0-78-WZk"/>
+                            <constraint firstItem="Rfa-0f-A4f" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Qlr-Mv-sMi"/>
                             <constraint firstItem="27" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="R0m-z7-TWk"/>
-                            <constraint firstItem="LhW-82-ZpQ" firstAttribute="top" secondItem="22" secondAttribute="top" constant="20" symbolic="YES" type="user" id="leV-88-6iH"/>
+                            <constraint firstItem="27" firstAttribute="top" secondItem="Rfa-0f-A4f" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="Vi6-Bm-mFM"/>
+                            <constraint firstItem="LhW-82-ZpQ" firstAttribute="top" secondItem="22" secondAttribute="top" constant="20" symbolic="YES" type="user" id="aCl-jN-QAa"/>
+                            <constraint firstAttribute="trailing" secondItem="Rfa-0f-A4f" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="dG5-vI-0hs"/>
                             <constraint firstAttribute="bottom" secondItem="27" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="obI-R0-p0s"/>
                             <constraint firstAttribute="trailing" secondItem="27" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pRe-qY-58T"/>
                         </constraints>
@@ -108,6 +123,7 @@
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="27" id="28"/>
                         <outlet property="imageView" destination="LhW-82-ZpQ" id="0Um-N2-GW4"/>
+                        <outlet property="publishedDateLabel" destination="Rfa-0f-A4f" id="Cib-D4-c0V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>

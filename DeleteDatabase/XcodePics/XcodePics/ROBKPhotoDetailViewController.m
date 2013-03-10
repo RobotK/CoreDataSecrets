@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *publishedDateLabel;
 
 @property (nonatomic, strong, readonly) NSOperationQueue *downloadQueue;
 
@@ -79,11 +80,12 @@
 
 - (void)configureView
 {
-	// Update the user interface for the detail item.
+	 // Update the user interface for the detail item.
 
-	if (self.photo) {
-		self.detailDescriptionLabel.text = self.photo.text;
-	}
+	 if (self.photo) {
+		  self.detailDescriptionLabel.text = self.photo.text;
+		  self.publishedDateLabel.text = [NSDateFormatter localizedStringFromDate:self.photo.published dateStyle:kCFDateFormatterShortStyle timeStyle:kCFDateFormatterShortStyle];
+	 }
 }
 
 - (void)downloadPhoto

@@ -8,6 +8,7 @@
 
 #import "ROBKAppDelegate.h"
 
+#import "MBProgressHUD.h"
 #import "ROBKCoreDataCoordinator.h"
 #import "ROBKDataLoader.h"
 
@@ -68,10 +69,16 @@
 
 - (void) deleteDatabaseFile
 {
+	 MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window animated:YES];
+	 hud.dimBackground = YES;
+	 
 	 [[ROBKCoreDataCoordinator sharedCoordinator] deleteDataStore:^(BOOL success) {
 		  if (success) {
 				NSLog(@"Database deleted");
 		  }
+		  dispatch_async(dispatch_get_main_queue(), ^{
+				[hud hide:YES];
+		  });
 	 }];
 }
 

@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 
 /**
- This is the same sa ROBKDatabaseUpdater, but uses ROBKCoreDataCoordinator.
+ This is the same as ROBKDatabaseUpdater, but uses ROBKCoreDataCoordinator.
  */
+
+extern NSString * const ROBKDataLoaderDidStart;
+extern NSString * const ROBKDataLoaderDidFinish;
 
 @interface ROBKDataLoader : NSObject
 

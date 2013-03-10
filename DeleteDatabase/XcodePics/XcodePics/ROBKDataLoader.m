@@ -14,6 +14,9 @@
 
 #import "ROBKCoreDataCoordinator.h"
 
+NSString * const ROBKDataLoaderDidStart = @"ROBKDataLoaderDidStart";
+NSString * const ROBKDataLoaderDidFinish = @"ROBKDataLoaderDidFinish";
+
 const NSUInteger ROBKDataLoaderSaveFrequency = 50;
 
 @interface ROBKDataLoader ()
@@ -43,11 +46,15 @@ const NSUInteger ROBKDataLoaderSaveFrequency = 50;
 
 -(void) loadJSONFromURL:(NSURL *)JSONURL
 {
+
+	 [[NSNotificationCenter defaultCenter] postNotificationName:ROBKDataLoaderDidStart object:nil];
+
 	 NSURLRequest *request = [NSURLRequest requestWithURL:JSONURL];
 	 ESJSONOperation *getDataOperation = [ESJSONOperation newJSONOperationWithRequest:request success:^(ESJSONOperation *op, id JSON) {
 
 		  [[ROBKCoreDataCoordinator sharedCoordinator] coordinateWritingWithBlock:^(NSManagedObjectContext *context, NSOperation *operation) {
 				if ([operation isCancelled]) {
+					 [self finished];
 					 return;
 				}
 
@@ -58,6 +65,7 @@ const NSUInteger ROBKDataLoaderSaveFrequency = 50;
 				for (NSDictionary *entry in feed[@"entry"]) {
 
 					 if ([operation isCancelled]) {
+						  [self finished];
 						  return;
 					 }
 
@@ -118,6 +126,7 @@ const NSUInteger ROBKDataLoaderSaveFrequency = 50;
 					 }
 
 					 if ([operation isCancelled]) {
+						  [self finished];
 						  return;
 					 }
 
@@ -136,6 +145,7 @@ const NSUInteger ROBKDataLoaderSaveFrequency = 50;
 				}
 
 				if ([operation isCancelled]) {
+					 [self finished];
 					 return;
 				}
 
@@ -147,6 +157,7 @@ const NSUInteger ROBKDataLoaderSaveFrequency = 50;
 					 }
 				}
 				
+				[self finished];
 				NSLog(@"Updated!");
 
 		  }];
@@ -154,6 +165,7 @@ const NSUInteger ROBKDataLoaderSaveFrequency = 50;
 	 } failure:^(ESJSONOperation *op) {
 		  // TODO: Handle the failure case.
 		  NSLog(@"Failure: %@", op.error);
+		  [self finished];
 	 }];
 
 	 // Don't call back on the main queue and use a low priority queue to keep the UI responsive.
@@ -174,5 +186,11 @@ const NSUInteger ROBKDataLoaderSaveFrequency = 50;
 	 return _dateFormatter;
 }
 
+#pragma mark - Helpers
+
+- (void) finished
+{
+	 [[NSNotificationCenter defaultCenter] postNotificationName:ROBKDataLoaderDidFinish object:nil];
+}
 
 @end

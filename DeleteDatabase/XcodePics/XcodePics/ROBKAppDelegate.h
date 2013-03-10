@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class DCTCoreDataStack;
-
 @interface ROBKAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 + (ROBKAppDelegate *)appDelegate;
+
+- (void)reloadData;
 
 @end

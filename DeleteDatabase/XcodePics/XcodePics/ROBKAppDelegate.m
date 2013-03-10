@@ -10,12 +10,11 @@
 
 #import "ROBKDataLoader.h"
 
-@interface ROBKAppDelegate ()
+@interface ROBKAppDelegate	()
 
 @property (nonatomic, strong) ROBKDataLoader *dataLoader;
 
 @end
-
 
 @implementation ROBKAppDelegate
 
@@ -27,8 +26,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	 self.dataLoader = [ROBKDataLoader new];
-	 NSURL *XcodePicsURL = [NSURL URLWithString:@"http://picasaweb.google.com/data/feed/api/all?kind=photo&q=xcode&alt=json"];
-	 [self.dataLoader loadJSONFromURL:XcodePicsURL];
+	 [self reloadData];
 
 	 return YES;
 }
@@ -58,6 +56,12 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void) reloadData
+{
+	 NSURL *XcodePicsURL = [NSURL URLWithString:@"http://picasaweb.google.com/data/feed/api/all?kind=photo&q=xcode&alt=json"];
+	 [self.dataLoader loadJSONFromURL:XcodePicsURL];
 }
 
 @end

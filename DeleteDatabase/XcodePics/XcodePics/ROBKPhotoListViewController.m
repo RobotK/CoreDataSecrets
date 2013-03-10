@@ -14,6 +14,7 @@
 
 #import "ROBKAppDelegate.h"
 #import "ROBKCoreDataCoordinator.h"
+#import "ROBKDataLoader.h"
 #import "ROBKPhotoDetailViewController.h"
 
 @interface ROBKPhotoListViewController () <NSFetchedResultsControllerDelegate>
@@ -37,19 +38,33 @@
 
 - (void)awakeFromNib
 {
-	[super awakeFromNib];
+	 [super awakeFromNib];
+
+	 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataLoaderDidStartNotification:) name:ROBKDataLoaderDidStart object:nil];
+	 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataLoaderDidFinishNotification:) name:ROBKDataLoaderDidFinish object:nil];
 }
 
 - (void)viewDidLoad
 {
-	[super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	 [super viewDidLoad];
+	 // Do any additional setup after loading the view, typically from a nib.
+
+	 if (!self.refreshControl) {
+		  self.refreshControl = [UIRefreshControl new];
+		  [self.refreshControl addTarget:[ROBKAppDelegate appDelegate] action:@selector(reloadData) forControlEvents:UIControlEventValueChanged];
+	 }
 }
 
 - (void)didReceiveMemoryWarning
 {
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+	 [[NSNotificationCenter defaultCenter] removeObserver:self name:ROBKDataLoaderDidStart object:nil];
+	 [[NSNotificationCenter defaultCenter] removeObserver:self name:ROBKDataLoaderDidFinish object:nil];
 }
 
 #pragma mark - Table View
@@ -260,6 +275,22 @@
 	}
 
 	return _updatedRowIndexPaths;
+}
+
+#pragma mark - Notification handlers
+
+- (void)handleDataLoaderDidStartNotification:(NSNotification *)notification
+{
+	 if (self.isViewLoaded) {
+		  [self.refreshControl beginRefreshing];
+	 }
+}
+
+- (void)handleDataLoaderDidFinishNotification:(NSNotification *)notification
+{
+	 if (self.isViewLoaded) {
+		  [self.refreshControl endRefreshing];
+	 }
 }
 
 #pragma mark - Helpers

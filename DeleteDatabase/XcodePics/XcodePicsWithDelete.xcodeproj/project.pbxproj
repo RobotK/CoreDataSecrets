@@ -83,10 +83,10 @@
 			isa = PBXGroup;
 			children = (
 				B0D2FC2116E8BB5100F9D26F /* CoreDataManager */,
-				B0120C9616E4D21300E9E863 /* LibraryResources */,
-				B02E078916E3864400C6A12E /* XcodePics */,
 				B02E078216E3864400C6A12E /* Frameworks */,
+				B0120C9616E4D21300E9E863 /* LibraryResources */,
 				B02E078116E3864400C6A12E /* Products */,
+				B02E078916E3864400C6A12E /* XcodePics */,
 			);
 			sourceTree = "<group>";
 		};

@@ -23,6 +23,7 @@
 		B02E07CE16E39FA800C6A12E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02E07CD16E39FA800C6A12E /* CoreData.framework */; };
 		B072EDEC16E49E200090BAF6 /* libXcodePicsCoreDataLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B072EDEB16E49E200090BAF6 /* libXcodePicsCoreDataLibrary.a */; };
 		B0D2FC2416E8BEC900F9D26F /* ROBKCoreDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D2FC2316E8BEC900F9D26F /* ROBKCoreDataCoordinator.m */; };
+		B0F4B44016EB9F0400C6C510 /* ROBKDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F4B43F16EB9F0400C6C510 /* ROBKDataLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		B072EDEB16E49E200090BAF6 /* libXcodePicsCoreDataLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libXcodePicsCoreDataLibrary.a; path = "/Code/CoreDataSecrets/Preloading/XcodePicsCoreDataLibrary/build/Release-iphoneos/libXcodePicsCoreDataLibrary.a"; sourceTree = "<absolute>"; };
 		B0D2FC2216E8BEC900F9D26F /* ROBKCoreDataCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROBKCoreDataCoordinator.h; sourceTree = "<group>"; };
 		B0D2FC2316E8BEC900F9D26F /* ROBKCoreDataCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROBKCoreDataCoordinator.m; sourceTree = "<group>"; };
+		B0F4B43E16EB9F0400C6C510 /* ROBKDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROBKDataLoader.h; sourceTree = "<group>"; };
+		B0F4B43F16EB9F0400C6C510 /* ROBKDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROBKDataLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 			children = (
 				B02E079216E3864400C6A12E /* ROBKAppDelegate.h */,
 				B02E079316E3864400C6A12E /* ROBKAppDelegate.m */,
+				B0F4B43E16EB9F0400C6C510 /* ROBKDataLoader.h */,
+				B0F4B43F16EB9F0400C6C510 /* ROBKDataLoader.m */,
 				B02E079B16E3864400C6A12E /* MainStoryboard.storyboard */,
 				B02E079E16E3864400C6A12E /* ROBKPhotoListViewController.h */,
 				B02E079F16E3864400C6A12E /* ROBKPhotoListViewController.m */,
@@ -218,6 +223,7 @@
 				B02E07A016E3864400C6A12E /* ROBKPhotoListViewController.m in Sources */,
 				B02E07A316E3864400C6A12E /* ROBKPhotoDetailViewController.m in Sources */,
 				B0D2FC2416E8BEC900F9D26F /* ROBKCoreDataCoordinator.m in Sources */,
+				B0F4B44016EB9F0400C6C510 /* ROBKDataLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

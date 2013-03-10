@@ -8,14 +8,14 @@
 
 #import "ROBKAppDelegate.h"
 
-#import "XcodePicsCoreDataLibrary/DCTCoreDataStack+ROBKAdditions.h"
-#import "XcodePicsCoreDataLibrary/ROBKDatabaseUpdater.h"
+#import "ROBKDataLoader.h"
 
 @interface ROBKAppDelegate ()
 
-@property (nonatomic, strong) ROBKDatabaseUpdater *databaseUpdater;
+@property (nonatomic, strong) ROBKDataLoader *dataLoader;
 
 @end
+
 
 @implementation ROBKAppDelegate
 
@@ -24,25 +24,13 @@
 	return (ROBKAppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
-- (void) dealloc
-{
-	// Technically not needed, but included for completeness.
-	[[NSNotificationCenter defaultCenter] removeObserver:self name:NSManagedObjectContextDidSaveNotification object:nil];
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	self.coreDataStack = [DCTCoreDataStack sharedCoreDataStack];
+	 self.dataLoader = [ROBKDataLoader new];
+	 NSURL *XcodePicsURL = [NSURL URLWithString:@"http://picasaweb.google.com/data/feed/api/all?kind=photo&q=xcode&alt=json"];
+	 [self.dataLoader loadJSONFromURL:XcodePicsURL];
 
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSaveNotificationHandler:) name:NSManagedObjectContextDidSaveNotification object:nil];
-
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-		self.databaseUpdater = [ROBKDatabaseUpdater new];
-		NSURL *XcodePicsURL = [NSURL URLWithString:@"http://picasaweb.google.com/data/feed/api/all?kind=photo&q=xcode&alt=json"];
-		[self.databaseUpdater loadJSONFromURL:XcodePicsURL];
-	});
-
-	return YES;
+	 return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -70,23 +58,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-#pragma mark - Notification handlers
-
-- (void)didSaveNotificationHandler:(NSNotification *)notification
-{
-	NSLog(@"Saved!");
-
-	NSManagedObjectContext *moc = (NSManagedObjectContext *)notification.object;
-
-	if (moc.persistentStoreCoordinator == self.coreDataStack.managedObjectContext.persistentStoreCoordinator) {
-
-		dispatch_async(dispatch_get_main_queue(), ^{
-			[self.coreDataStack.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
-		});
-
-	}
 }
 
 @end

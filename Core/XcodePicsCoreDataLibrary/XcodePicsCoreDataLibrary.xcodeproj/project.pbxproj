@@ -27,6 +27,8 @@
 		B0120C9516E4D18C00E9E863 /* XcodePics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B072EDE116E49D9F0090BAF6 /* XcodePics.xcdatamodeld */; };
 		B0120C9C16E4E03D00E9E863 /* DCTCoreDataStack+ROBKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B0120C9B16E4E03D00E9E863 /* DCTCoreDataStack+ROBKAdditions.m */; };
 		B0120C9D16E4E0B500E9E863 /* DCTCoreDataStack+ROBKAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B0120C9A16E4E03D00E9E863 /* DCTCoreDataStack+ROBKAdditions.h */; };
+		B015985516EC7A06004D1A87 /* ISO8601DateFormatter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B072EDC716E4983C0090BAF6 /* ISO8601DateFormatter.h */; };
+		B015985616EC7C67004D1A87 /* ESJSONOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B072EDCD16E4983C0090BAF6 /* ESJSONOperation.h */; };
 		B072EDB916E497090090BAF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B072EDB816E497090090BAF6 /* Foundation.framework */; };
 		B072EDE916E49E0C0090BAF6 /* ROBKPhoto+ROBKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDE616E49E0C0090BAF6 /* ROBKPhoto+ROBKAdditions.m */; };
 		B072EDEA16E49E0C0090BAF6 /* ROBKPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDE816E49E0C0090BAF6 /* ROBKPhoto.m */; };
@@ -67,6 +69,8 @@
 				B072EDF416E4A0590090BAF6 /* ROBKPhoto+ROBKAdditions.h in CopyFiles */,
 				B094C0AF16E4A68F008A2334 /* ROBKDatabaseUpdater.h in CopyFiles */,
 				B0120C9D16E4E0B500E9E863 /* DCTCoreDataStack+ROBKAdditions.h in CopyFiles */,
+				B015985516EC7A06004D1A87 /* ISO8601DateFormatter.h in CopyFiles */,
+				B015985616EC7C67004D1A87 /* ESJSONOperation.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,6 +658,7 @@
 				B006ADCF16E5FD9D00F1565D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0120C9216E4D18300E9E863 /* Build configuration list for PBXNativeTarget "XcodePicsModels" */ = {
 			isa = XCConfigurationList;

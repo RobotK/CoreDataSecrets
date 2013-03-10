@@ -10,10 +10,10 @@
 
 #import <CoreData/CoreData.h>
 
-#import "XcodePicsCoreDataLibrary/DCTCoreDataStack.h"
 #import "XcodePicsCoreDataLibrary/ROBKPhoto+ROBKAdditions.h"
 
 #import "ROBKAppDelegate.h"
+#import "ROBKCoreDataCoordinator.h"
 #import "ROBKPhotoDetailViewController.h"
 
 @interface ROBKPhotoListViewController () <NSFetchedResultsControllerDelegate>
@@ -126,7 +126,7 @@
 		return _managedObjectContext;
 	}
 
-	_managedObjectContext = [ROBKAppDelegate appDelegate].coreDataStack.managedObjectContext;
+	 _managedObjectContext = [[ROBKCoreDataCoordinator sharedCoordinator] mainThreadContext];
 	return _managedObjectContext;
 }
 

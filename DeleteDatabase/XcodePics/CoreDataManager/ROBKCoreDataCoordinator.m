@@ -11,7 +11,7 @@
 #import "XCodePicsCoreDataLibrary/DCTCoreDataStack+ROBKAdditions.h"
 
 #define LOG_WRITE_TIMES
-#define ASSERT_ON_LONG_WRITES
+//#define ASSERT_ON_LONG_WRITES
 
 #ifdef ASSERT_ON_LONG_WRITES
 
@@ -95,7 +95,7 @@ NSString * const ROBKCoordinatorOriginalNotificationUserInfoKey = @"ROBKCoordina
                 return;
             }
 
-            NSManagedObjectContext *context = [NSManagedObjectContext new];
+            NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSConfinementConcurrencyType];
 				context.persistentStoreCoordinator = self.coreDataStack.persistentStoreCoordinator;
 				context.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy;
 
@@ -142,7 +142,7 @@ NSString * const ROBKCoordinatorOriginalNotificationUserInfoKey = @"ROBKCoordina
                 return;
             }
 
-            NSManagedObjectContext *context = [NSManagedObjectContext new];
+            NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSConfinementConcurrencyType];
 				context.persistentStoreCoordinator = self.coreDataStack.persistentStoreCoordinator;
 				context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy;
 

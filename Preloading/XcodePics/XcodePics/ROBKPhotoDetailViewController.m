@@ -93,7 +93,7 @@
 	NSURL *downloadURL = [NSURL URLWithString:self.photo.url];
 	NSLog(@"downloadURL: %@", downloadURL);
 	NSURLRequest *downloadRequest = [NSURLRequest requestWithURL:downloadURL];
-	ESHTTPOperation *downloadOperation = [ESHTTPOperation newHTTPOperationWithRequest:downloadRequest work:^id<NSObject>(ESHTTPOperation *op, NSError *__autoreleasing *error) {
+	ESHTTPOperation *downloadOperation = [ESHTTPOperation newHTTPOperationWithRequest:downloadRequest work:^id<NSObject>(ESHTTPOperation *op, NSError * __autoreleasing *error) {
 
 		if (op.error)
 		{

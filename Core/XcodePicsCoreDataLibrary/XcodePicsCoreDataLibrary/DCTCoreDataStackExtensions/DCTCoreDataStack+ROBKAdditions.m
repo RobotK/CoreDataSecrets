@@ -59,7 +59,7 @@
 #endif
 
 	NSURL *dataDirectoryURL = [libraryURL URLByAppendingPathComponent:@"data"];
-	NSError * __autoreleasing dataDirectoryCreationError;
+	NSError __autoreleasing *dataDirectoryCreationError;
 	BOOL dataDirectoryCreated = [[NSFileManager defaultManager] createDirectoryAtURL:dataDirectoryURL withIntermediateDirectories:YES attributes:nil error:&dataDirectoryCreationError];
 	if (!dataDirectoryCreated) {
 		NSLog(@"Could not create the data directory. %@", dataDirectoryCreationError);

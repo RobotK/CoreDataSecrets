@@ -21,6 +21,8 @@ const NSTimeInterval longWriteThresholdInSeconds = 3.0f;
 
 
 NSString * const ROBKCoordinatorDataUpdateNotification = @"ROBKCoordinatorDataUpdateNotification";
+NSString * const ROBKCoordinatorDatabaseDeletedeNotification = @"ROBKCoordinatorDatabaseDeletedeNotification";
+
 NSString * const ROBKCoordinatorChangedObjectsKey = @"ROBKCoordinatorChangedObjectsKey";
 NSString * const ROBKCoordinatorOriginalNotificationUserInfoKey = @"ROBKCoordinatorOriginalNotificationUserInfoKey";
 
@@ -198,6 +200,40 @@ NSString * const ROBKCoordinatorOriginalNotificationUserInfoKey = @"ROBKCoordina
     [self.coreDataOperationQueue waitUntilAllOperationsAreFinished];
 	 
     [self.coreDataOperationQueue addOperation:coordinatedWriteOperation];
+}
+
+-(void)deleteDataStore:(void(^)(BOOL success))callback
+{
+	 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+
+		  BOOL success = NO;
+
+		  [self.coreDataOperationQueue cancelAllOperations];
+		  [self.coreDataOperationQueue waitUntilAllOperationsAreFinished];
+
+		  NSURL *databaseFileURL = [DCTCoreDataStack databaseURL];
+
+		  // If the file doesn't exist, we consider the deletion to be a success.
+		  BOOL databaseFileExists = [databaseFileURL checkResourceIsReachableAndReturnError:nil]; // Intentionally disregarding the error.
+
+		  if (databaseFileExists) {
+				NSError __autoreleasing *deletionError;
+				BOOL fileDeleted = [[NSFileManager defaultManager] removeItemAtURL:databaseFileURL error:&deletionError];
+				if (!fileDeleted) {
+					 NSLog(@"Error deleting the database file. %@", deletionError);
+				} else {
+					 [self.coreDataStack reset];
+					 success = YES;
+				}
+		  } else {
+				success = YES;
+		  }
+
+		  if (success) {
+				[[NSNotificationCenter defaultCenter] postNotificationName:ROBKCoordinatorDatabaseDeletedeNotification object:nil];
+		  }
+		  callback(success);
+	 });
 }
 
 @end

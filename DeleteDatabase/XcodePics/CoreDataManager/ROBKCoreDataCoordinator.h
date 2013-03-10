@@ -26,6 +26,9 @@
 /** This notification is fired after any changes have been persisted. The keys for the notification's userInfo dictionary are detailed below. DO NOT rely on this notification being posted on a particular queue or thread. */
 extern NSString * const ROBKCoordinatorDataUpdateNotification;
 
+/** This notification is fired after the database file has been deleted. The userinfo dictionary is empty. */
+extern NSString * const ROBKCoordinatorDatabaseDeletedeNotification;
+
 /** This returns a set that contains every object that's been inserted, deleted, or updated by the latest core data save. It's useful to determine if there have been any changes to a particular entity type that you're class is interensted in. */
 extern NSString * const ROBKCoordinatorChangedObjectsKey;
 
@@ -67,5 +70,12 @@ typedef void(^ROBKCoreDataCoordinatorBlock)(NSManagedObjectContext *context, NSO
  */
 -(void)coordinateWritingWithBlock:(ROBKCoreDataCoordinatorBlock)block;
 
+
+/**
+ Asyncrhonously delete the data store file.
+ 
+ You probably don't really want to do this.
+ */
+-(void)deleteDataStore:(void(^)(BOOL success))callback;
 
 @end

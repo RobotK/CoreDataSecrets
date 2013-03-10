@@ -78,7 +78,7 @@ const NSUInteger ROBKDataLoaderSaveFrequency = 50;
 					 NSFetchRequest *existingPhotoFetchRequest = [NSFetchRequest fetchRequestWithEntityName:[ROBKPhoto robk_entityName]];
 					 [existingPhotoFetchRequest setPredicate:existingPhotoPredicate];
 
-					 NSError * __autoreleasing fetchExistingPhotoError;
+					 NSError __autoreleasing *fetchExistingPhotoError;
 					 NSArray *existingPhotos = [context executeFetchRequest:existingPhotoFetchRequest error:&fetchExistingPhotoError];
 					 if (!existingPhotos) {
 						  NSLog(@"Error fetching photo with identifier %@. %@", identifier, fetchExistingPhotoError);
@@ -134,7 +134,7 @@ const NSUInteger ROBKDataLoaderSaveFrequency = 50;
 						  updateCount = updateCount + 1;
 						  if (updateCount % ROBKDataLoaderSaveFrequency == 0) {
 								// Save periodically so a giant save doesn't cause the UI to hiccup.
-								NSError * __autoreleasing saveError;
+								NSError __autoreleasing *saveError;
 								BOOL saved = [context save:&saveError];
 								if (!saved) {
 									 NSLog(@"Error saving: %@", saveError);
@@ -150,7 +150,7 @@ const NSUInteger ROBKDataLoaderSaveFrequency = 50;
 				}
 
 				if ([context hasChanges]) {
-					 NSError * __autoreleasing saveError;
+					 NSError __autoreleasing *saveError;
 					 BOOL saved = [context save:&saveError];
 					 if (!saved) {
 						  NSLog(@"Error saving: %@", saveError);

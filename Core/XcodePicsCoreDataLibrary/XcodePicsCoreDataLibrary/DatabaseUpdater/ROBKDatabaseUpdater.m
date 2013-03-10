@@ -47,8 +47,8 @@ const NSUInteger ROBKDatabaseUpdaterSaveFrequency = 50;
 -(void) synchronousLoadJSONFromURL:(NSURL *)JSONURL
 {
 	 NSURLRequest *request = [NSURLRequest requestWithURL:JSONURL];
-	 NSURLResponse * __autoreleasing response = nil;
-	 NSError * __autoreleasing downloadError;
+	 NSURLResponse __autoreleasing *response = nil;
+	 NSError __autoreleasing *downloadError;
 	 NSData *JSONData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&downloadError];
 
 	 if (!JSONData) {
@@ -56,7 +56,7 @@ const NSUInteger ROBKDatabaseUpdaterSaveFrequency = 50;
 		  return;
 	 }
 
-	 NSError * __autoreleasing parsingError;
+	 NSError __autoreleasing *parsingError;
 	 id JSON = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:&parsingError];
 	 if (!JSON) {
 		  NSLog(@"Error parsing the json. %@", parsingError);
@@ -92,7 +92,7 @@ const NSUInteger ROBKDatabaseUpdaterSaveFrequency = 50;
 				NSFetchRequest *existingPhotoFetchRequest = [NSFetchRequest fetchRequestWithEntityName:[ROBKPhoto robk_entityName]];
 				[existingPhotoFetchRequest setPredicate:existingPhotoPredicate];
 
-				NSError * __autoreleasing fetchExistingPhotoError;
+				NSError __autoreleasing *fetchExistingPhotoError;
 				NSArray *existingPhotos = [moc executeFetchRequest:existingPhotoFetchRequest error:&fetchExistingPhotoError];
 				if (!existingPhotos) {
 					 NSLog(@"Error fetching photo with identifier %@. %@", identifier, fetchExistingPhotoError);
@@ -143,7 +143,7 @@ const NSUInteger ROBKDatabaseUpdaterSaveFrequency = 50;
                 updateCount = updateCount + 1;
                 if (updateCount % ROBKDatabaseUpdaterSaveFrequency == 0) {
                     // Save periodically so a giant save doesn't cause the UI to hiccup.
-                    NSError * __autoreleasing saveError;
+                    NSError __autoreleasing *saveError;
                     BOOL saved = [moc save:&saveError];
                     if (!saved) {
                         NSLog(@"Error saving: %@", saveError);
@@ -154,7 +154,7 @@ const NSUInteger ROBKDatabaseUpdaterSaveFrequency = 50;
 		  }
 
 		  if ([moc hasChanges]) {
-				NSError * __autoreleasing saveError;
+				NSError __autoreleasing *saveError;
 				BOOL saved = [moc save:&saveError];
 				if (!saved) {
 					 NSLog(@"Error saving: %@", saveError);

@@ -19,8 +19,11 @@
 
 @interface ROBKPhotoListViewController () <NSFetchedResultsControllerDelegate>
 
-@property (strong, nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+- (IBAction)garbageButtonTapped:(id)sender;
+
 
 // Declare some collection properties to hold the various updates we might get from the NSFetchedResultsControllerDelegate
 @property (nonatomic, strong) NSMutableIndexSet *deletedSectionIndexes;
@@ -42,6 +45,8 @@
 
 	 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataLoaderDidStartNotification:) name:ROBKDataLoaderDidStart object:nil];
 	 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataLoaderDidFinishNotification:) name:ROBKDataLoaderDidFinish object:nil];
+
+	 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDatabaseDeletedNotification:) name:ROBKCoordinatorDatabaseDeletedeNotification object:nil];
 }
 
 - (void)viewDidLoad
@@ -65,6 +70,8 @@
 {
 	 [[NSNotificationCenter defaultCenter] removeObserver:self name:ROBKDataLoaderDidStart object:nil];
 	 [[NSNotificationCenter defaultCenter] removeObserver:self name:ROBKDataLoaderDidFinish object:nil];
+
+	 [[NSNotificationCenter defaultCenter] removeObserver:self name:ROBKCoordinatorDatabaseDeletedeNotification object:nil];
 }
 
 #pragma mark - Table View
@@ -125,7 +132,7 @@
 	_fetchedResultsController = aFetchedResultsController;
 
 	NSError *error = nil;
-	if (![self.fetchedResultsController performFetch:&error]) {
+	if (![_fetchedResultsController performFetch:&error]) {
 		// Replace this implementation with code to handle the error appropriately.
 		// abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -277,19 +284,43 @@
 	return _updatedRowIndexPaths;
 }
 
+#pragma mark - Actions
+
+- (IBAction)garbageButtonTapped:(id)sender
+{
+	 [[ROBKAppDelegate appDelegate] deleteDatabaseFile];
+}
+
+
 #pragma mark - Notification handlers
 
 - (void)handleDataLoaderDidStartNotification:(NSNotification *)notification
 {
 	 if (self.isViewLoaded) {
-		  [self.refreshControl beginRefreshing];
+		  dispatch_async(dispatch_get_main_queue(), ^{
+				[self.refreshControl beginRefreshing];
+		  });
 	 }
 }
 
 - (void)handleDataLoaderDidFinishNotification:(NSNotification *)notification
 {
 	 if (self.isViewLoaded) {
-		  [self.refreshControl endRefreshing];
+		  dispatch_async(dispatch_get_main_queue(), ^{
+				[self.refreshControl endRefreshing];
+		  });
+	 }
+}
+
+- (void)handleDatabaseDeletedNotification:(NSNotification *)notification
+{
+	 if (self.isViewLoaded) {
+		  dispatch_async(dispatch_get_main_queue(), ^{
+				self.fetchedResultsController = nil;
+				self.managedObjectContext = nil;
+				[NSFetchedResultsController deleteCacheWithName:@"ROBKPhotoListViewController"];
+				[self.tableView reloadData];
+		  });
 	 }
 }
 

@@ -8,6 +8,7 @@
 
 #import "ROBKAppDelegate.h"
 
+#import "ROBKCoreDataCoordinator.h"
 #import "ROBKDataLoader.h"
 
 @interface ROBKAppDelegate	()
@@ -25,9 +26,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	 self.dataLoader = [ROBKDataLoader new];
-	 [self reloadData];
-
 	 return YES;
 }
 
@@ -60,8 +58,21 @@
 
 - (void) reloadData
 {
+	 if (!self.dataLoader) {
+		  self.dataLoader = [ROBKDataLoader new];
+	 }
+
 	 NSURL *XcodePicsURL = [NSURL URLWithString:@"http://picasaweb.google.com/data/feed/api/all?kind=photo&q=xcode&alt=json"];
 	 [self.dataLoader loadJSONFromURL:XcodePicsURL];
+}
+
+- (void) deleteDatabaseFile
+{
+	 [[ROBKCoreDataCoordinator sharedCoordinator] deleteDataStore:^(BOOL success) {
+		  if (success) {
+				NSLog(@"Database deleted");
+		  }
+	 }];
 }
 
 @end

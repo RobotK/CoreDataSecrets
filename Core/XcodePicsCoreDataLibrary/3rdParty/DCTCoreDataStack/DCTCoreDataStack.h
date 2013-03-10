@@ -141,4 +141,9 @@ extern NSString *const DCTCoreDataStackExcludeFromBackupStoreOption;
 @property (nonatomic, copy) void(^automaticSaveCompletionHandler)(BOOL success, NSError *error);
 #endif
 
+/**
+ Resets the state of the core data stack, causing everythign to be reloaded from scratch.
+ */
+- (void) reset;
+
 @end

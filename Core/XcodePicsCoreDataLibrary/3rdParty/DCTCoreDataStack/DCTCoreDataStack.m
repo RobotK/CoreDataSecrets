@@ -124,6 +124,16 @@ NSString *const DCTCoreDataStackExcludeFromBackupStoreOption = @"DCTCoreDataStac
 						 modelURL:nil];
 }
 
+#pragma mark - Methods
+
+- (void) reset
+{
+	 self.managedObjectContext = nil;
+	 self.managedObjectContext = nil;
+	 self.rootContext = nil;
+	 self.persistentStoreCoordinator = nil;
+}
+
 #pragma mark - Getters
 
 - (NSManagedObjectContext *)managedObjectContext {

@@ -15,5 +15,6 @@
 + (ROBKAppDelegate *)appDelegate;
 
 - (void)reloadData;
+- (void)deleteDatabaseFile;
 
 @end

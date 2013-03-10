@@ -2,17 +2,17 @@
 <Workspace
    version = "1.0">
    <Group
-      location = "container:DeleteDatabase"
-      name = "DeleteDatabase">
-      <FileRef
-         location = "group:XcodePics/XcodePicsWithDelete.xcodeproj">
-      </FileRef>
-   </Group>
-   <Group
       location = "container:Core"
       name = "Core">
       <FileRef
          location = "group:XcodePicsCoreDataLibrary/XcodePicsCoreDataLibrary.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:DeleteDatabase"
+      name = "DeleteDatabase">
+      <FileRef
+         location = "group:XcodePics/XcodePicsWithDelete.xcodeproj">
       </FileRef>
    </Group>
    <Group

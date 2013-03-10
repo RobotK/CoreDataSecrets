@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B0120C9816E4D56100E9E863 /* XcodePicsModels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B0120C9716E4D56100E9E863 /* XcodePicsModels.bundle */; };
+		B015985B16ECB534004D1A87 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B015985A16ECB534004D1A87 /* MBProgressHUD.m */; };
 		B02E078416E3864400C6A12E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02E078316E3864400C6A12E /* UIKit.framework */; };
 		B02E078616E3864400C6A12E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02E078516E3864400C6A12E /* Foundation.framework */; };
 		B02E078816E3864400C6A12E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02E078716E3864400C6A12E /* CoreGraphics.framework */; };
@@ -28,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		B0120C9716E4D56100E9E863 /* XcodePicsModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XcodePicsModels.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		B015985916ECB534004D1A87 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		B015985A16ECB534004D1A87 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		B02E078016E3864400C6A12E /* XcodePicsWithDelete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XcodePicsWithDelete.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02E078316E3864400C6A12E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B02E078516E3864400C6A12E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -79,9 +82,27 @@
 			path = "/Users/krismarkel/Library/Developer/Xcode/DerivedData/CoreDataSecrets-aouapbfnbhwasdcwgbbumbznphvj/Build/Products/Debug-iphoneos/../../../../../../../../../../Code/CoreDataSecrets/Preloading/XcodePics";
 			sourceTree = "<absolute>";
 		};
+		B015985716ECB4DE004D1A87 /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				B015985816ECB534004D1A87 /* MBProgressHUD */,
+			);
+			path = 3rdParty;
+			sourceTree = "<group>";
+		};
+		B015985816ECB534004D1A87 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				B015985916ECB534004D1A87 /* MBProgressHUD.h */,
+				B015985A16ECB534004D1A87 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		B02E077716E3864400C6A12E = {
 			isa = PBXGroup;
 			children = (
+				B015985716ECB4DE004D1A87 /* 3rdParty */,
 				B0D2FC2116E8BB5100F9D26F /* CoreDataManager */,
 				B02E078216E3864400C6A12E /* Frameworks */,
 				B0120C9616E4D21300E9E863 /* LibraryResources */,
@@ -224,6 +245,7 @@
 				B02E07A316E3864400C6A12E /* ROBKPhotoDetailViewController.m in Sources */,
 				B0D2FC2416E8BEC900F9D26F /* ROBKCoreDataCoordinator.m in Sources */,
 				B0F4B44016EB9F0400C6C510 /* ROBKDataLoader.m in Sources */,
+				B015985B16ECB534004D1A87 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

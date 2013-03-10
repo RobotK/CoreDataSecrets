@@ -71,6 +71,8 @@
 {
 	 MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window animated:YES];
 	 hud.dimBackground = YES;
+	 hud.labelText = NSLocalizedString(@"Deleting the database", nil);
+	 hud.minShowTime = 3.0;
 	 
 	 [[ROBKCoreDataCoordinator sharedCoordinator] deleteDataStore:^(BOOL success) {
 		  if (success) {

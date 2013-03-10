@@ -32,6 +32,14 @@
 
 @synthesize downloadQueue=_downloadQueue;
 
+#pragma mark - Lifecycle
+
+- (void) dealloc
+{
+	 [[NSNotificationCenter defaultCenter] removeObserver:self name:ROBKCoordinatorDatabaseDeletedNotification object:nil];
+	 [[NSNotificationCenter defaultCenter] removeObserver:self name:ROBKCoordinatorChangedObjectsKey object:nil];
+}
+
 #pragma mark - Properties
 
 - (void)setPhoto:(ROBKPhoto *)newPhoto
@@ -57,6 +65,12 @@
 }
 
 #pragma mark - View Lifecycle
+
+- (void)awakeFromNib
+{
+	 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDatabaseDeletedNotification:) name:ROBKCoordinatorDatabaseDeletedNotification object:nil];
+	 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataUpdatedNotification:) name:ROBKCoordinatorDataUpdateNotification object:nil];
+}
 
 - (void)viewDidLoad
 {
@@ -162,6 +176,35 @@
 	}];
 
 	[self.downloadQueue addOperation:downloadOperation];
+}
+
+#pragma mark - Notification handlers
+
+- (void) handleDataUpdatedNotification:(NSNotification *)notification
+{
+	 dispatch_async(dispatch_get_main_queue(), ^{
+		  if (self.isViewLoaded) {
+
+				// If the current photo is in the list of updated object, update the view.
+				NSDictionary *userInfo = [notification userInfo];
+				NSSet *changedObjects = [userInfo objectForKey:ROBKCoordinatorChangedObjectsKey];
+
+				NSPredicate *photoPredicate = [NSPredicate predicateWithFormat:@"SELF.objectID = %@", self.photo.objectID];
+				NSSet *changedPhoto = [changedObjects filteredSetUsingPredicate:photoPredicate];
+				if ([changedPhoto count] > 0) {
+					 // Because the changed have already been merged into the main thread MOC, we just need to reread the photo's properties.
+					 [self configureView];
+				}
+
+		  }
+	 });
+}
+
+- (void) handleDatabaseDeletedNotification:(NSNotification *)notification
+{
+	 dispatch_async(dispatch_get_main_queue(), ^{
+		  [self.navigationController popToRootViewControllerAnimated:YES];
+	 });
 }
 
 @end

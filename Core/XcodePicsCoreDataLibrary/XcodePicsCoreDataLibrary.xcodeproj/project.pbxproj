@@ -21,7 +21,6 @@
 		B006ADDB16E5FDF600F1565D /* ROBKPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDE816E49E0C0090BAF6 /* ROBKPhoto.m */; };
 		B006ADDC16E5FDFB00F1565D /* ROBKDatabaseUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = B072EDDF16E498B00090BAF6 /* ROBKDatabaseUpdater.m */; };
 		B006AE0016E6014900F1565D /* ROBKDatabaseUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = B072EDDE16E498B00090BAF6 /* ROBKDatabaseUpdater.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B0120C8316E4D0D000E9E863 /* XcodePics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B072EDE116E49D9F0090BAF6 /* XcodePics.xcdatamodeld */; };
 		B0120C8A16E4D18300E9E863 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0120C8916E4D18300E9E863 /* CoreFoundation.framework */; };
 		B0120C9016E4D18300E9E863 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0120C8E16E4D18300E9E863 /* InfoPlist.strings */; };
 		B0120C9516E4D18C00E9E863 /* XcodePics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B072EDE116E49D9F0090BAF6 /* XcodePics.xcdatamodeld */; };
@@ -475,7 +474,6 @@
 				B094C0BD16E4C86A008A2334 /* DCTCoreDataStack.m in Sources */,
 				B094C0BE16E4C86E008A2334 /* NSManagedObjectContext+DCTCoreDataStack.m in Sources */,
 				B094C0BF16E4C87B008A2334 /* ROBKDatabaseUpdater.m in Sources */,
-				B0120C8316E4D0D000E9E863 /* XcodePics.xcdatamodeld in Sources */,
 				B0120C9C16E4E03D00E9E863 /* DCTCoreDataStack+ROBKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,7 +10,7 @@
 
 @interface ROBKDatabaseUpdater : NSObject
 
--(void) loadJSONFromURL:(NSURL *)JSONURL;
--(void) synchronousLoadJSONFromURL:(NSURL *)JSONURL;
+- (void)loadJSONFromURL:(NSURL *)JSONURL;
+- (void)synchronousLoadJSONFromURL:(NSURL *)JSONURL;
 
 @end

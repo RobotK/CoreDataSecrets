@@ -80,7 +80,7 @@ Now that we've ripped a bunch of code from your app, it's important to make sure
  1. Drag the bundle file into your app's project.
  	* **Do not** select the "Copy items into destination group's folder" checkbox!
  	* **Do** add the bundle to your app's target.
- 1. Select the bundle file in the project navigator, and in the file inspector (in the utilities pane), change the location to "Relative to Build Products".
+ 1. Select the bundle file in the project navigator, and in the file inspector (in the utilities pane), change the location to "Relative to Build Products". <br>
  	<img src="http://f.cl.ly/items/04281u321e3e1m0a400R/Screen%20Shot%202013-03-14%20at%206.49.13%20.png">
  1. Build and run the app and make sure everything is working properly.
  

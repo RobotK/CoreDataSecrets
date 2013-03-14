@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:readme.markdown">
+   </FileRef>
+   <FileRef
       location = "group:License.txt">
    </FileRef>
    <Group

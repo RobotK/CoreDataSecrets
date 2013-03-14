@@ -22,6 +22,9 @@
       location = "container:Preloading"
       name = "Preloading">
       <FileRef
+         location = "group:readme.markdown">
+      </FileRef>
+      <FileRef
          location = "group:XcodePics/XcodePicsWithPreload.xcodeproj">
       </FileRef>
       <FileRef

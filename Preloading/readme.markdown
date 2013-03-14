@@ -134,9 +134,11 @@ The TARGET\_OS\_IPHONE is a useful macro for separating out the code that needs 
 
 ### Adding Data Synchronously
 
-Your app probably populates the database asynchronously, which is a great thing. However, asynchronous operations and command line apps don't play well together. My general approach for this is to refactor the data loading code so it can operate synchronously or asynchronously and then provide methods for doing both.
+Your app probably populates the database asynchronously, which is a great thing. However, asynchronous operations and command line apps take some work to play well together. My general approach for this is to refactor the data loading code so it can operate synchronously or asynchronously and then provide methods for doing both.
 
-Precisely how you go about this depends on the details of your app, but you probably need to replace asynchronous network operations with synchronous ones. Also, any code that operates in a block that's run asynchronously needs to be refactored into a method and sync and async calls provided. (One of the nice things about command line apps is that it's okay, in fact it's _necessary_, to block on the main thread.)
+Precisely how you go about this depends on the details of your app, but you probably need to replace asynchronous network operations with synchronous ones. Also, any code that operates in a block that's run asynchronously needs to be refactored into a method and sync and async calls provided. (One of the nice things about command line apps is that it's okay to block on the main thread.)
+
+Other alternatives are spinning the runloop or using a dispatch semaphore, both of which are left as exercises for the reader.
 
 # Using the Pre-populated Data Store
 

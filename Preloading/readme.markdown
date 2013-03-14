@@ -144,7 +144,7 @@ Now that your command line app is running smoothly, it should be adding a data s
  
 ## Including the Data store
 
-This is just like adding the models bundle to your main app. Drag the data store file from its place within the derived data folder into your app's project. Do no select the checkbox to copy the file, but do select the checkbox to include it in the app's target.
+This is just like adding the models bundle to your main app. Drag the data store file from its place within the derived data folder into your app's project. Do not select the checkbox to copy the file, but do select the checkbox to include it in the app's target.
  
 Then select the file in the project navigator, and in the file inspector change the location to "Relative to Build Products".
  
